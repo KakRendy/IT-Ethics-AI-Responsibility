@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Materi interaktif Pertemuan 4 Etika Teknologi Informasi dan Tanggung Jawab AI: privasi, data pribadi, persetujuan, keamanan, analisis kasus, dan Kuis 1.">
+<title>Pertemuan 4 | Privasi, Data Pribadi, Persetujuan & Keamanan</title>
+<style>
+:root{--navy:#142b49;--blue:#2859b8;--blue2:#eaf1ff;--ink:#20324b;--muted:#65768b;--border:#dce4ee;--paper:#f5f7fb;--white:#fff;--green:#287654;--amber:#9b6816;--red:#9d4136;--shadow:0 10px 28px rgba(25,47,79,.06);--radius:15px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #9abaff;outline-offset:2px}a{color:var(--blue)}.app{min-height:100vh;display:grid;grid-template-columns:250px minmax(0,1fr) 235px}.sidebar{background:#fff;border-right:1px solid var(--border);padding:22px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;gap:10px;align-items:center;padding:5px 9px 20px;border-bottom:1px solid var(--border);margin-bottom:18px}.brand-mark{background:var(--navy);color:#fff;width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-weight:900}.brand strong{display:block;font-size:13px;line-height:1.3}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.course-label{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:850;color:#8a98a9;padding:0 10px;margin:17px 0 7px}.nav-item{width:100%;display:flex;gap:10px;text-align:left;align-items:flex-start;background:transparent;border:0;border-radius:9px;padding:8px 10px;color:#53667e;font-size:12px;line-height:1.4}.nav-item:hover{background:#f2f5fa}.nav-item.active{background:var(--blue2);color:#1c4da6;font-weight:800}.nav-num{min-width:20px;font-size:10px;font-weight:850;color:#9aa8b8;padding-top:1px}.nav-item.active .nav-num{color:var(--blue)}.progress-wrap{margin:19px 8px 0;padding-top:14px;border-top:1px solid var(--border)}.progress-line{height:6px;border-radius:99px;background:#e7edf5;overflow:hidden;margin:9px 0}.progress-fill{height:100%;background:var(--blue);width:0;transition:width .2s}.small{font-size:12px;color:var(--muted)}.main{min-width:0;display:flex;flex-direction:column;min-height:100vh}.topbar{background:#fff;border-bottom:1px solid var(--border);padding:12px 25px;display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;z-index:5}.crumb{font-size:12px;font-weight:750;color:#6d7e93}.actions{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid var(--border);border-radius:9px;padding:8px 12px;background:#fff;color:var(--ink);font-size:12px;font-weight:780}.btn:hover{background:#f2f5fa}.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}.btn.primary:hover{background:#20499b}.btn.dark{background:var(--navy);border-color:var(--navy);color:#fff}.content{width:100%;max-width:980px;margin:0 auto;padding:32px clamp(17px,4vw,55px) 52px;flex:1}.slide{display:none;animation:fade .18s ease}.slide.active{display:block}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}.eyebrow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:13px;font-size:10px;font-weight:850;letter-spacing:.8px;text-transform:uppercase;color:#71839a}.tag{background:#e8efff;border:1px solid #d7e4ff;border-radius:6px;color:#2855a5;padding:4px 7px;letter-spacing:.2px}.tag.gray{background:#edf1f5;border-color:#e0e6ed;color:#5b6c80}.tag.green{background:#e8f6ef;border-color:#ccebd9;color:#246b49}.title{font-size:clamp(27px,3.4vw,42px);line-height:1.13;letter-spacing:-1.1px;margin:0 0 14px;color:var(--navy);font-weight:850}.lead{font-size:16px;line-height:1.75;color:#586a80;max-width:790px;margin:0 0 22px}.hero{background:var(--navy);color:#fff;border-radius:18px;padding:clamp(27px,5vw,53px);min-height:340px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-80px;bottom:-145px;width:280px;height:280px;border:34px solid rgba(158,188,246,.12);border-radius:50%}.hero .kicker{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#aec4ef;font-weight:850;margin-bottom:18px}.hero h1{font-size:clamp(31px,4.2vw,53px);line-height:1.08;letter-spacing:-1.5px;margin:0 0 17px;max-width:740px}.hero p{font-size:16px;line-height:1.75;color:#d1def2;max-width:670px;margin:0 0 23px}.hero .btn{align-self:flex-start;position:relative;z-index:1}.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:21px}.hero-meta span{font-size:11px;color:#d0def3;border:1px solid #3a5270;border-radius:7px;padding:6px 9px}.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:21px;margin:15px 0;box-shadow:var(--shadow)}.card h2,.card h3{margin:0 0 9px;color:#233d5c;line-height:1.3}.card h2{font-size:19px}.card h3{font-size:16px}.card p:last-child{margin-bottom:0}.mini{font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:1px;color:#71839a;margin-bottom:9px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.tile{background:#fff;border:1px solid var(--border);border-radius:12px;padding:17px;text-align:left;color:var(--ink);min-width:0}.tile h3{font-size:15px;margin:0 0 7px}.tile p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}.callout{background:#edf3ff;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:15px 17px;margin:17px 0;color:#355171;font-size:13px}.callout.neutral{background:#f2f4f7;border-color:#9aa8b9;color:#506176}.callout.warn{background:#fff8e9;border-color:#d6a34a;color:#6e511f}.callout.good{background:#effaf4;border-color:#45a878;color:#246143}.table-scroll{overflow:auto}.table{border-collapse:collapse;width:100%;font-size:13px;min-width:570px}.table th,.table td{text-align:left;padding:11px;border-bottom:1px solid var(--border);vertical-align:top}.table th{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:#50657e;background:#f1f5fa}.table td:first-child{font-weight:750;color:#2c4665}.choice-list{display:grid;gap:9px;margin:15px 0}.choice{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:10px;background:#fff;font-size:13px;line-height:1.55}.choice:hover{background:#f7faff;border-color:#b7c9e8}.choice input{margin-top:4px;accent-color:var(--blue)}.feedback{display:none;border:1px solid #c8d7ed;border-radius:10px;background:#f0f5fd;padding:13px 15px;margin-top:12px;font-size:13px;color:#405978}.feedback.show{display:block}.feedback.good{background:#effaf4;border-color:#b6e2c8;color:#246143}.feedback.bad{background:#fff6f1;border-color:#edc9b9;color:#7b4938}.field{display:block;font-size:12px;font-weight:800;color:#52677f;margin:14px 0 6px}textarea,input[type=text],input[type=date],select{width:100%;border:1px solid #ccd7e4;border-radius:9px;padding:10px 12px;color:var(--ink);background:#fff;font-size:13px}textarea{min-height:95px;resize:vertical;line-height:1.6}.detail{padding:16px;border:1px solid #d7e3f6;border-radius:11px;background:#f4f7ff;margin-top:13px}.detail h3{margin:0 0 7px}.detail p{font-size:13px;color:#52677f;margin:0}.pillrow{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.pill{display:inline-block;padding:4px 8px;border-radius:6px;background:#eef2f7;color:#52657c;font-size:11px;font-weight:750}.nav-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--border);padding:16px 25px;background:#fff}.nav-footer .right{display:flex;gap:8px}.rightbar{position:sticky;top:0;height:100vh;overflow:auto;background:#f9fbfe;border-left:1px solid var(--border);padding:27px 16px}.right-block{padding-bottom:17px;margin-bottom:17px;border-bottom:1px solid var(--border)}.right-label{font-size:10px;letter-spacing:1.1px;text-transform:uppercase;font-weight:850;color:#8b99aa;margin-bottom:8px}.rightbar h3{font-size:14px;line-height:1.4;margin:0 0 8px;color:#2d4461}.rightbar p,.rightbar li{font-size:12px;color:#6a7d92;line-height:1.75}.rightbar ul{padding-left:17px;margin:8px 0}.teacher-only{display:none}.teacher-mode .teacher-only{display:block}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#172e4d;color:#fff;border-radius:9px;padding:10px 15px;font-size:12px;z-index:20;box-shadow:var(--shadow);display:none}.toast.show{display:block}.hide{display:none!important}.quote{border-left:3px solid #b3c7ea;padding:8px 0 8px 15px;color:#52677f;font-size:14px}.case-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:17px 0}.case-step{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}.case-step strong{display:block;font-size:12px;color:#2d4d76}.case-step span{display:block;font-size:11px;color:var(--muted);margin-top:3px}.answer-key{display:none}.teacher-mode .answer-key{display:block}.rubric-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}.rubric-row:last-child{border-bottom:0}.score{font-weight:850;color:var(--blue)}.ref-link{overflow-wrap:anywhere}.footnote{font-size:12px;color:var(--muted)}.mobile-menu{display:none}
+@media(max-width:1120px){.app{grid-template-columns:220px minmax(0,1fr)}.rightbar{display:none}}
+@media(max-width:740px){.app{display:block}.sidebar{display:none;position:fixed;z-index:12;left:0;top:0;width:280px;box-shadow:var(--shadow)}.sidebar.open{display:block}.mobile-menu{display:inline-flex}.topbar{padding:10px 12px}.topbar .crumb{max-width:38%;font-size:11px}.actions .btn{padding:7px 9px;font-size:11px}.content{padding:22px 14px 35px}.grid2,.grid3{grid-template-columns:1fr}.case-flow{grid-template-columns:1fr 1fr}.hero{min-height:310px}.nav-footer{padding:13px}.nav-footer .btn{padding:8px}.title{letter-spacing:-.6px}.card{padding:16px}.table{min-width:520px}}
+@media print{body{background:#fff}.app{display:block}.sidebar,.topbar,.rightbar,.nav-footer,.actions,.mobile-menu{display:none!important}.content{max-width:none;padding:0}.slide{display:block!important;page-break-after:always;animation:none}.hero{color:#111;background:#fff;border:2px solid #142b49;min-height:0}.hero p,.hero .kicker,.hero-meta span{color:#333}.card{box-shadow:none;break-inside:avoid}.teacher-only,.answer-key{display:block!important}.feedback{display:block!important}button{display:none!important}a{color:#111;text-decoration:underline}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brand-mark">ET</div><div><strong>Etika TI & Tanggung Jawab AI</strong><small>Modul pembelajaran interaktif</small></div></div>
+  <div class="course-label">Pertemuan 4</div>
+  <nav id="navList" aria-label="Navigasi materi"></nav>
+  <div class="progress-wrap"><div class="small">Progres materi</div><div class="progress-line"><div class="progress-fill" id="progressFill"></div></div><div class="small" id="progressText">1 dari 17 bagian</div></div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div style="display:flex;align-items:center;gap:9px"><button class="btn mobile-menu" id="menuBtn" aria-label="Buka menu">☰</button><div class="crumb" id="crumb">Pertemuan 4 / Orientasi</div></div>
+    <div class="actions">
+      <button class="btn" id="teacherBtn" type="button">Mode Dosen</button>
+      <button class="btn" id="saveBtn" type="button">Simpan Jawaban</button>
+      <button class="btn" id="exportBtn" type="button">Ekspor TXT</button>
+      <button class="btn" id="printBtn" type="button">Cetak</button>
+    </div>
+  </header>
+  <div class="content" id="content">
+    <section class="slide active" data-title="Orientasi">
+      <div class="hero">
+        <div class="kicker">Pertemuan 4 · 2 SKS · Sub-CPMK-3</div>
+        <h1>Privasi, Data Pribadi, Persetujuan, dan Keamanan</h1>
+        <p>Pelajari cara menganalisis data yang diproses oleh sistem TI/AI, tujuan penggunaannya, dasar pemrosesan, risiko, dan hak individu yang datanya digunakan.</p>
+        <button class="btn primary" data-go="1">Mulai pembelajaran →</button>
+        <div class="hero-meta"><span>Sub-CPMK-3</span><span>Bloom C2–C4</span><span>Materi + latihan + Kuis 1</span></div>
+      </div>
+      <div class="callout"><strong>Pertanyaan kunci:</strong> Data apa yang diproses, untuk tujuan apa, berdasarkan apa, apa risikonya, dan hak apa yang dimiliki subjek data?</div>
+      <div class="grid3">
+        <div class="card"><div class="mini">Identifikasi</div><h3>Data dan tujuan</h3><p>Kenali data pribadi, kategori data, dan tujuan pemrosesannya.</p></div>
+        <div class="card"><div class="mini">Evaluasi</div><h3>Dasar dan hak</h3><p>Periksa dasar pemrosesan, persetujuan, dan hak subjek data.</p></div>
+        <div class="card"><div class="mini">Mitigasi</div><h3>Risiko dan keamanan</h3><p>Identifikasi risiko lalu pilih langkah perlindungan yang relevan.</p></div>
+      </div>
+      <div class="card"><h2>Identitas pembelajaran</h2><p><strong>Mata kuliah:</strong> Etika Teknologi Informasi dan Tanggung Jawab AI</p><p><strong>Sub-CPMK-3:</strong> Menganalisis privasi, data pribadi, persetujuan, dan keamanan.</p><p><strong>Teknik penilaian:</strong> Kuis 1, berupa tes objektif dan respons singkat, dengan kriteria akurasi konsep dan penerapan pada kasus.</p></div>
+    </section>
+
+    <section class="slide" data-title="Capaian & alur">
+      <div class="eyebrow"><span class="tag">01</span><span>Orientasi</span></div><h1 class="title">Capaian pembelajaran dan alur</h1>
+      <p class="lead">Pertemuan ini mengubah pengetahuan dasar menjadi kemampuan menerapkan konsep privasi dan perlindungan data pada skenario TI/AI.</p>
+      <div class="card"><h2>Setelah pembelajaran, mahasiswa mampu:</h2><ol><li>Mengidentifikasi data pribadi yang diproses.</li><li>Menentukan tujuan pengumpulan dan penggunaan data.</li><li>Menilai dasar pemrosesan yang mungkin relevan dan menyebutkan informasi yang belum tersedia.</li><li>Mengidentifikasi risiko privasi dan keamanan.</li><li>Menjelaskan hak subjek data yang relevan.</li><li>Memberikan rekomendasi perlindungan data yang masuk akal.</li></ol></div>
+      <div class="callout neutral"><strong>Target Taksonomi Bloom:</strong> C2 (memahami), C3 (menerapkan), dan C4 (menganalisis). Penekanan utama ada pada C3–C4 karena indikator RPS meminta penerapan pada kasus, bukan hanya hafalan definisi.</div>
+      <div class="card"><h2>Alokasi waktu contoh: 100 menit</h2><div class="table-scroll"><table class="table"><thead><tr><th>Waktu</th><th>Kegiatan</th></tr></thead><tbody><tr><td>0–5</td><td>Pembuka dan pertanyaan pemantik</td></tr><tr><td>5–20</td><td>Privasi, data pribadi, dan jenis data</td></tr><tr><td>20–35</td><td>Siklus pemrosesan dan peran</td></tr><tr><td>35–50</td><td>Tujuan, minimisasi, dan dasar pemrosesan</td></tr><tr><td>50–60</td><td>Persetujuan dan hak subjek data</td></tr><tr><td>60–70</td><td>Risiko privasi dan keamanan</td></tr><tr><td>70–80</td><td>Privacy Case Audit</td></tr><tr><td>80–100</td><td>Kuis 1</td></tr></tbody></table></div><p class="footnote">Alokasi ini dapat disesuaikan dengan jadwal nyata dan durasi kuis.</p></div>
+    </section>
+
+    <section class="slide" data-title="Privasi & keamanan">
+      <div class="eyebrow"><span class="tag">02</span><span>Konsep dasar</span></div><h1 class="title">Privasi bukan sekadar keamanan</h1>
+      <p class="lead">Sistem dapat terlindungi secara teknis, tetapi tetap menimbulkan persoalan privasi apabila mengumpulkan data berlebihan atau menggunakannya untuk tujuan yang tidak sesuai.</p>
+      <div class="table-scroll"><table class="table"><thead><tr><th>Konsep</th><th>Pengertian</th><th>Contoh</th></tr></thead><tbody>
+      <tr><td>Privasi</td><td>Perlindungan ruang pribadi dan penggunaan informasi tentang individu secara tepat.</td><td>Riwayat percakapan tidak digunakan sembarangan untuk tujuan lain.</td></tr>
+      <tr><td>Data pribadi</td><td>Data tentang individu yang teridentifikasi atau dapat diidentifikasi, langsung maupun melalui kombinasi informasi.</td><td>Nama, nomor identitas, atau kombinasi data yang mengidentifikasi seseorang.</td></tr>
+      <tr><td>Pelindungan data pribadi</td><td>Upaya melindungi data sepanjang pengumpulan, penggunaan, penyimpanan, pengungkapan, hingga penghapusan.</td><td>Transparansi tujuan, pembatasan akses, dan pemenuhan hak.</td></tr>
+      <tr><td>Kerahasiaan</td><td>Pembatasan pengungkapan informasi kepada pihak yang tidak berwenang.</td><td>Hanya petugas tertentu yang dapat melihat data kesehatan.</td></tr>
+      <tr><td>Keamanan informasi</td><td>Perlindungan informasi dan sistem dari akses, perubahan, pengungkapan, kerusakan, atau kehilangan yang tidak sah.</td><td>Autentikasi, enkripsi, pencatatan aktivitas, dan pencadangan.</td></tr>
+      </tbody></table></div>
+      <div class="callout warn"><strong>Ingat:</strong> persetujuan atau dasar pemrosesan menjawab apakah pemrosesan memiliki landasan yang tepat. Keamanan menjawab bagaimana data dilindungi selama pemrosesan. Keduanya saling berhubungan, tetapi tidak sama.</div>
+      <div class="card"><h2>Kasus pemantik</h2><p>Aplikasi presensi meminta akses kamera, lokasi, daftar kontak, dan riwayat penelusuran web. Fungsi utamanya hanya mencatat kehadiran.</p><div class="choice-list"><label class="choice"><input type="radio" name="privacyWarmup" value="a"> Semua data boleh dikumpulkan karena pengguna memasang aplikasi.</label><label class="choice"><input type="radio" name="privacyWarmup" value="b"> Pengelola perlu menilai relevansi, tujuan, dasar pemrosesan, dan risiko setiap kategori data.</label><label class="choice"><input type="radio" name="privacyWarmup" value="c"> Persoalan baru muncul jika data sudah bocor.</label></div><button class="btn primary" data-check="privacyWarmup" data-answer="b" data-feedback="warmupFeedback">Periksa jawaban</button><div id="warmupFeedback" class="feedback"></div></div>
+    </section>
+
+    <section class="slide" data-title="Jenis data pribadi">
+      <div class="eyebrow"><span class="tag">03</span><span>Data pribadi</span></div><h1 class="title">Kenali jenis data sebelum menilai risikonya</h1>
+      <p class="lead">UU Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi membedakan data pribadi menjadi data pribadi yang bersifat umum dan spesifik.</p>
+      <div class="grid2">
+        <div class="card"><div class="mini">Kategori umum</div><h2>Data pribadi umum</h2><p>Contoh yang disebutkan dalam UU PDP meliputi nama lengkap, jenis kelamin, kewarganegaraan, agama, dan status perkawinan.</p></div>
+        <div class="card"><div class="mini">Kategori spesifik</div><h2>Data pribadi spesifik</h2><p>Meliputi data kesehatan, biometrik, genetika, catatan kejahatan, data anak, dan data keuangan pribadi.</p></div>
+      </div>
+      <div class="table-scroll"><table class="table"><thead><tr><th>Contoh data</th><th>Hal yang perlu diperhatikan</th></tr></thead><tbody>
+      <tr><td>Nama dan NPM</td><td>Dapat mengidentifikasi mahasiswa.</td></tr><tr><td>Alamat surel</td><td>Dapat menjadi data pribadi ketika terkait dengan individu yang teridentifikasi atau dapat diidentifikasi.</td></tr><tr><td>Foto wajah</td><td>Dapat mengidentifikasi individu; konteks pemrosesannya perlu diperiksa.</td></tr><tr><td>Templat biometrik wajah</td><td>Data biometrik, termasuk kategori data pribadi spesifik.</td></tr><tr><td>Riwayat kesehatan</td><td>Termasuk data pribadi spesifik.</td></tr><tr><td>Lokasi GPS</td><td>Dapat mengungkap keberadaan dan pola aktivitas seseorang.</td></tr><tr><td>Riwayat percakapan chatbot</td><td>Dapat memuat identitas, informasi pribadi, atau informasi sensitif.</td></tr>
+      </tbody></table></div>
+      <div class="callout neutral">Foto biasa dan templat biometrik bukan hal yang selalu identik secara teknis. Foto dapat digunakan untuk menghasilkan data biometrik melalui pemrosesan tertentu. Konteks dan kemampuan identifikasi tetap perlu diperiksa.</div>
+      <div class="card"><h2>Latihan Data Detective</h2><p>Untuk aplikasi presensi yang mengumpulkan nama, NPM, foto wajah, waktu kehadiran, lokasi GPS, dan identitas perangkat, catat data yang berpotensi mengidentifikasi mahasiswa, data spesifik, dan data yang relevansinya perlu dipertanyakan.</p>
+      <label class="field" for="dataDetective">Jawaban Anda</label><textarea id="dataDetective" data-save placeholder="Tuliskan klasifikasi data, alasan, dan informasi tambahan yang dibutuhkan..."></textarea></div>
+    </section>
+
+    <section class="slide" data-title="Siklus & peran">
+      <div class="eyebrow"><span class="tag">04</span><span>Siklus pemrosesan</span></div><h1 class="title">Data memiliki perjalanan, tanggung jawab juga</h1>
+      <p class="lead">Pelindungan data tidak berhenti ketika data dikumpulkan. Data perlu ditangani secara bertanggung jawab sepanjang siklus pemrosesan.</p>
+      <div class="case-flow"><div class="case-step"><strong>1. Kumpulkan</strong><span>Pemerolehan data</span></div><div class="case-step"><strong>2. Simpan</strong><span>Retensi dan akses</span></div><div class="case-step"><strong>3. Olah</strong><span>Analisis data</span></div><div class="case-step"><strong>4. Gunakan</strong><span>Keputusan AI</span></div><div class="case-step"><strong>5. Bagikan/hapus</strong><span>Pengungkapan atau pemusnahan</span></div></div>
+      <div class="grid2"><div class="card"><h2>Pengendali Data Pribadi</h2><p>Pihak yang menentukan tujuan dan melakukan kendali atas pemrosesan data pribadi.</p></div><div class="card"><h2>Prosesor Data Pribadi</h2><p>Pihak yang memproses data pribadi atas nama pengendali sesuai ketentuan yang berlaku.</p></div></div>
+      <div class="callout">Contoh: kampus memakai penyedia aplikasi presensi. Kampus mungkin bertindak sebagai pengendali dan penyedia sebagai prosesor apabila penyedia memproses data atas nama kampus. Penetapan peran sebenarnya bergantung pada fakta dan hubungan para pihak.</div>
+      <div class="card"><h2>Periksa alur tanggung jawab</h2><ul><li>Siapa yang menentukan tujuan pemrosesan?</li><li>Siapa yang mengoperasikan sistem dan dapat mengakses data?</li><li>Apakah data dibagikan kepada pihak lain?</li><li>Apakah pihak ketiga menggunakan data untuk tujuan tambahan?</li><li>Siapa yang menangani permintaan akses, koreksi, atau penghapusan?</li></ul><p class="footnote">Penyedia AI tidak otomatis menjadi prosesor untuk seluruh aktivitasnya. Peran aktual perlu ditentukan berdasarkan tujuan dan kegiatan pemrosesan yang dilakukan.</p></div>
+    </section>
+
+    <section class="slide" data-title="Tujuan & minimisasi">
+      <div class="eyebrow"><span class="tag">05</span><span>Tujuan pemrosesan</span></div><h1 class="title">Data dikumpulkan untuk apa?</h1>
+      <p class="lead">Dua prinsip penting adalah pembatasan tujuan dan minimisasi data. Keduanya membantu mencegah penggunaan data yang tidak relevan atau tidak sesuai.</p>
+      <div class="grid2"><div class="card"><h2>Purpose limitation</h2><p>Data diproses sesuai tujuan yang telah ditetapkan dan dijelaskan berdasarkan dasar pemrosesan yang relevan. Tujuan baru perlu dinilai, bukan otomatis dianggap tercakup oleh tujuan awal.</p></div><div class="card"><h2>Data minimization</h2><p>Pengumpulan dan penggunaan data dibatasi pada hal-hal yang relevan serta diperlukan untuk tujuan pemrosesan.</p></div></div>
+      <div class="table-scroll"><table class="table"><thead><tr><th>Kebutuhan</th><th>Data yang mungkin relevan</th><th>Data yang perlu dipertanyakan</th></tr></thead><tbody><tr><td>Presensi</td><td>Identitas mahasiswa dan waktu kehadiran</td><td>Daftar kontak pribadi</td></tr><tr><td>Pengumuman akademik</td><td>Identitas dan alamat kontak yang diperlukan</td><td>Riwayat kesehatan</td></tr><tr><td>Rekomendasi materi belajar</td><td>Riwayat pembelajaran yang relevan</td><td>Data keuangan keluarga yang tidak berkaitan</td></tr><tr><td>Permohonan beasiswa</td><td>Identitas dan dokumen yang diperlukan untuk menilai kelayakan</td><td>Data tambahan tanpa hubungan jelas dengan penilaian</td></tr></tbody></table></div>
+      <div class="card"><h2>Latihan: tujuan utama atau tambahan?</h2><p>Aplikasi pembelajaran mengumpulkan jawaban kuis untuk menghitung nilai. Pengelola ingin menggunakan seluruh jawaban dan riwayat aktivitas mahasiswa untuk mengembangkan produk komersial.</p>
+      <label class="field" for="purposeExercise">Analisis Anda</label><textarea id="purposeExercise" data-save placeholder="Jelaskan tujuan awal, tujuan tambahan, informasi yang perlu diperiksa, dan cara meminimalkan data..."></textarea></div>
+      <div class="callout warn">Penggunaan data untuk melatih model AI tidak otomatis dilarang atau otomatis dibolehkan. Tujuan, dasar pemrosesan, transparansi, hak subjek data, serta ketentuan yang berlaku perlu dinilai.</div>
+    </section>
+
+    <section class="slide" data-title="Dasar pemrosesan">
+      <div class="eyebrow"><span class="tag">06</span><span>UU PDP</span></div><h1 class="title">Dasar pemrosesan data pribadi</h1>
+      <p class="lead">UU PDP mengenal enam dasar pemrosesan. Mahasiswa perlu memilih dasar yang mungkin relevan berdasarkan fakta, bukan menebak berdasarkan kemudahan.</p>
+      <div class="table-scroll"><table class="table"><thead><tr><th>Dasar</th><th>Penjelasan ringkas</th><th>Contoh konteks</th></tr></thead><tbody>
+      <tr><td>Persetujuan sah secara eksplisit</td><td>Subjek data memberi persetujuan untuk tujuan tertentu.</td><td>Fitur tambahan yang memang didasarkan pada persetujuan.</td></tr>
+      <tr><td>Pemenuhan perjanjian</td><td>Pemrosesan diperlukan untuk memenuhi perjanjian atau permintaan sebelum perjanjian.</td><td>Data yang diperlukan untuk menjalankan layanan yang disepakati.</td></tr>
+      <tr><td>Kewajiban hukum</td><td>Pemrosesan diperlukan untuk memenuhi kewajiban hukum pengendali.</td><td>Pemrosesan yang diwajibkan oleh peraturan yang berlaku.</td></tr>
+      <tr><td>Kepentingan vital</td><td>Pemrosesan diperlukan untuk melindungi kepentingan vital subjek data.</td><td>Situasi tertentu yang menyangkut keselamatan atau kepentingan vital individu.</td></tr>
+      <tr><td>Kepentingan umum, pelayanan publik, atau kewenangan hukum</td><td>Pemrosesan dilakukan berdasarkan konteks dan kewenangan hukum yang relevan.</td><td>Pelayanan publik dengan dasar kewenangan sesuai ketentuan.</td></tr>
+      <tr><td>Kepentingan sah lainnya</td><td>Memperhatikan tujuan, kebutuhan, keseimbangan kepentingan, dan hak subjek data.</td><td>Situasi ketika kepentingan sah dapat dibuktikan dan memenuhi ketentuan.</td></tr>
+      </tbody></table></div>
+      <div class="callout warn"><strong>Jangan disederhanakan:</strong> persetujuan bukan satu-satunya dasar pemrosesan. Sebaliknya, tombol “Saya Setuju” tidak otomatis membuktikan seluruh pemrosesan sudah sesuai.</div>
+      <div class="card"><h2>Informasi apa yang masih diperlukan?</h2><ul><li>Apakah ada perjanjian yang relevan?</li><li>Apakah terdapat kewajiban hukum yang berlaku?</li><li>Apakah pemrosesan berkaitan dengan pelayanan publik dan kewenangan yang sah?</li><li>Apakah persetujuan mencakup tujuan yang dinilai?</li><li>Apakah kepentingan sah dapat dibuktikan dan diseimbangkan dengan hak subjek data?</li></ul>
+      <label class="field" for="legalBasisExercise">Latihan dasar pemrosesan</label><textarea id="legalBasisExercise" data-save placeholder="Pilih satu skenario dari materi. Sebutkan dasar yang mungkin relevan dan fakta yang masih perlu diperiksa..."></textarea></div>
+    </section>
+
+    <section class="slide" data-title="Persetujuan">
+      <div class="eyebrow"><span class="tag">07</span><span>Persetujuan</span></div><h1 class="title">Klik tombol bukan akhir analisis</h1>
+      <p class="lead">Ketika persetujuan digunakan sebagai dasar pemrosesan, persetujuan harus memenuhi ketentuan yang berlaku dan berkaitan dengan tujuan yang disampaikan kepada subjek data.</p>
+      <div class="card"><h2>Checklist persetujuan</h2><ul><li>Apakah identitas pihak yang mengumpulkan data jelas?</li><li>Apakah tujuan pemrosesan dijelaskan?</li><li>Apakah jenis data yang dikumpulkan dijelaskan?</li><li>Apakah penggunaan oleh pihak ketiga dijelaskan jika relevan?</li><li>Apakah informasi tentang hak subjek data tersedia?</li><li>Apakah ada bukti persetujuan?</li><li>Apakah persetujuan mencakup tujuan pemrosesan yang sedang dinilai?</li></ul></div>
+      <div class="card"><h2>Contoh persetujuan yang kabur</h2><div class="quote">“Dengan melanjutkan, Anda menyetujui seluruh penggunaan data untuk meningkatkan layanan.”</div><p>Pesan tersebut tidak menjelaskan jenis data, tujuan tambahan, penggunaan oleh pihak ketiga, atau jangka waktu penyimpanan.</p><p>Analisis yang tepat bukan langsung memutuskan bahwa pemrosesan pasti melanggar hukum, melainkan menunjukkan informasi yang belum cukup untuk menilai persetujuan dan dasar pemrosesan.</p></div>
+      <div class="callout neutral"><strong>Penarikan persetujuan:</strong> UU PDP mengatur hak subjek data untuk menarik persetujuan. Dampak penarikan terhadap pemrosesan perlu ditangani sesuai dasar pemrosesan dan ketentuan yang berlaku. Penarikan persetujuan tidak selalu berarti semua data dalam setiap situasi otomatis harus dihapus tanpa pemeriksaan lebih lanjut.</div>
+      <div class="card"><h2>Latihan evaluasi</h2><p>Nilai informasi persetujuan di atas.</p><div class="choice-list"><label class="choice"><input type="radio" name="consentCheck" value="a"> Sudah memadai karena menyebut “seluruh penggunaan data”.</label><label class="choice"><input type="radio" name="consentCheck" value="b"> Belum cukup untuk menilai persetujuan atas semua tujuan karena informasi penting tidak dijelaskan.</label><label class="choice"><input type="radio" name="consentCheck" value="c"> Selalu tidak sah dalam semua konteks tanpa pengecualian.</label></div><button class="btn primary" data-check="consentCheck" data-answer="b" data-feedback="consentFeedback">Periksa jawaban</button><div id="consentFeedback" class="feedback"></div></div>
+    </section>
+
+    <section class="slide" data-title="Hak subjek data">
+      <div class="eyebrow"><span class="tag">08</span><span>Hak individu</span></div><h1 class="title">Hak subjek data pribadi</h1>
+      <p class="lead">Subjek data adalah individu yang data pribadinya diproses. UU PDP memberikan sejumlah hak dengan ketentuan dan pengecualian yang berlaku.</p>
+      <div class="table-scroll"><table class="table"><thead><tr><th>Hak</th><th>Contoh penerapan</th></tr></thead><tbody>
+      <tr><td>Mendapatkan informasi</td><td>Meminta penjelasan mengenai pihak yang mengumpulkan data dan tujuan penggunaan.</td></tr>
+      <tr><td>Memperbaiki data</td><td>Meminta koreksi identitas yang tidak akurat.</td></tr>
+      <tr><td>Mengakses dan memperoleh salinan</td><td>Meminta salinan data pribadi yang diproses sesuai ketentuan.</td></tr>
+      <tr><td>Mengakhiri pemrosesan atau meminta penghapusan/pemusnahan</td><td>Mengajukan permintaan berdasarkan kondisi dan ketentuan yang berlaku.</td></tr>
+      <tr><td>Menarik kembali persetujuan</td><td>Menarik persetujuan ketika persetujuan menjadi dasar pemrosesan.</td></tr>
+      <tr><td>Mengajukan keberatan atas keputusan otomatis tertentu</td><td>Memeriksa keputusan otomatis yang menimbulkan akibat hukum atau dampak signifikan.</td></tr>
+      <tr><td>Membatasi pemrosesan</td><td>Meminta pembatasan sesuai ketentuan.</td></tr>
+      <tr><td>Menggugat dan meminta ganti rugi</td><td>Menempuh upaya hukum sesuai ketentuan yang berlaku.</td></tr>
+      <tr><td>Portabilitas data</td><td>Memperoleh atau menggunakan data untuk dikirim ke pengendali lain sesuai persyaratan.</td></tr>
+      </tbody></table></div>
+      <div class="card"><h2>Latihan: keputusan beasiswa berbasis AI</h2><p>Sistem AI menolak permohonan mahasiswa secara otomatis. Mahasiswa tidak memperoleh penjelasan memadai tentang penggunaan data dan proses keputusan.</p><label class="field" for="dataRightsExercise">Hak apa yang relevan dan fakta apa yang perlu diketahui?</label><textarea id="dataRightsExercise" data-save placeholder="Tuliskan hak yang mungkin relevan, syarat yang perlu diperiksa, dan alasan Anda..."></textarea></div>
+      <div class="callout warn">Tidak setiap rekomendasi AI otomatis memenuhi kondisi hukum mengenai keberatan atas keputusan otomatis. Periksa apakah keputusan hanya didasarkan pada pemrosesan otomatis dan menimbulkan akibat hukum atau dampak signifikan.</div>
+    </section>
+
+    <section class="slide" data-title="Risiko & keamanan">
+      <div class="eyebrow"><span class="tag">09</span><span>Pengendalian risiko</span></div><h1 class="title">Risiko privasi dan keamanan</h1>
+      <div class="grid2"><div class="card"><div class="mini">Risiko privasi</div><h2>Penggunaan data</h2><ul><li>Pengumpulan berlebihan.</li><li>Penggunaan di luar tujuan.</li><li>Profiling yang tidak dipahami pengguna.</li><li>Pengungkapan informasi sensitif.</li><li>Penyimpanan terlalu lama.</li><li>Keputusan otomatis berdampak signifikan.</li></ul></div><div class="card"><div class="mini">Risiko keamanan</div><h2>Perlindungan sistem</h2><ul><li>Akses basis data tanpa izin.</li><li>Pencurian atau kebocoran data.</li><li>Perubahan data tanpa otorisasi.</li><li>Kehilangan atau kerusakan data.</li><li>Kredensial atau kunci akses tersebar.</li><li>Insiden pada penyedia pihak ketiga.</li></ul></div></div>
+      <div class="table-scroll"><table class="table"><thead><tr><th>Kontrol</th><th>Fungsi</th></tr></thead><tbody><tr><td>Pembatasan akses</td><td>Membatasi siapa yang dapat melihat atau menggunakan data.</td></tr><tr><td>Autentikasi kuat</td><td>Mengurangi risiko akses melalui akun yang disalahgunakan.</td></tr><tr><td>Enkripsi</td><td>Membantu melindungi kerahasiaan data ketika disimpan atau dikirim.</td></tr><tr><td>Pseudonimisasi</td><td>Mengurangi keterhubungan langsung dengan identitas; informasi penghubung disimpan terpisah.</td></tr><tr><td>Anonimisasi</td><td>Mengubah data agar individu tidak dapat diidentifikasi secara wajar, dengan mempertimbangkan kemungkinan penggabungan informasi.</td></tr><tr><td>Audit dan pencatatan aktivitas</td><td>Membantu mendeteksi serta menelusuri akses dan perubahan data.</td></tr><tr><td>Retensi dan penghapusan</td><td>Mengurangi penyimpanan data yang tidak lagi diperlukan.</td></tr><tr><td>Evaluasi penyedia layanan</td><td>Menilai penggunaan data, kontrol keamanan, dan tanggung jawab pihak ketiga.</td></tr></tbody></table></div>
+      <div class="callout warn"><strong>Pseudonimisasi bukan anonimisasi.</strong> Data pseudonim masih dapat menjadi data pribadi jika identitas dapat dihubungkan kembali melalui informasi tambahan.</div>
+      <div class="card"><h2>Privasi sejak perancangan</h2><p><em>Privacy by design</em> berarti pelindungan data dipertimbangkan sejak perancangan sistem, bukan baru setelah sistem selesai dibuat.</p><ul><li>Kumpulkan hanya data yang diperlukan.</li><li>Tetapkan tujuan dan masa retensi.</li><li>Batasi akses berdasarkan peran.</li><li>Nilai risiko sebelum pemrosesan berisiko tinggi.</li><li>Evaluasi penggunaan data oleh penyedia AI.</li><li>Sediakan mekanisme pemenuhan hak subjek data.</li></ul></div>
+    </section>
+
+    <section class="slide" data-title="Studi kasus">
+      <div class="eyebrow"><span class="tag">10</span><span>Kasus terpadu</span></div><h1 class="title">Studi kasus: KampusPresensi AI</h1>
+      <p class="lead">Kasus hipotetis untuk menerapkan seluruh indikator RPS. Gunakan fakta yang tersedia dan tandai informasi yang belum diketahui.</p>
+      <div class="card"><div class="mini">Skenario</div><h2>KampusPresensi AI</h2><p>Sebuah perguruan tinggi menggunakan aplikasi presensi berbasis pengenalan wajah. Aplikasi mengumpulkan nama, NPM, foto wajah, templat biometrik, waktu kehadiran, lokasi GPS, dan identitas perangkat.</p><p>Kampus menyatakan data digunakan untuk mencatat kehadiran. Data disimpan melalui layanan penyedia aplikasi. Beberapa bulan kemudian, penyedia mengusulkan penggunaan templat biometrik dan data kehadiran untuk meningkatkan model AI yang akan dipasarkan kepada institusi lain.</p><p>Informasi kepada mahasiswa hanya menyebutkan penggunaan aplikasi untuk presensi. Tidak dijelaskan secara rinci apakah data akan digunakan untuk melatih model komersial. Seorang mahasiswa meminta informasi mengenai datanya dan ingin mengetahui apakah data tersebut dapat dihapus.</p></div>
+      <div class="case-flow"><div class="case-step"><strong>Data</strong><span>Apa yang diproses?</span></div><div class="case-step"><strong>Tujuan</strong><span>Untuk apa?</span></div><div class="case-step"><strong>Dasar</strong><span>Berdasarkan apa?</span></div><div class="case-step"><strong>Risiko</strong><span>Apa yang bisa terjadi?</span></div><div class="case-step"><strong>Hak</strong><span>Apa yang relevan?</span></div></div>
+      <div class="callout">Tidak cukup untuk langsung menyatakan “pasti melanggar hukum”. Mahasiswa harus memisahkan fakta, hal yang belum diketahui, dasar yang mungkin relevan, dan kesimpulan yang dapat dipertanggungjawabkan.</div>
+    </section>
+
+    <section class="slide" data-title="Lembar kerja kasus">
+      <div class="eyebrow"><span class="tag">11</span><span>Worksheet</span></div><h1 class="title">Privacy Case Audit</h1>
+      <p class="lead">Isi lembar kerja berdasarkan skenario KampusPresensi AI. Jawaban tersimpan secara lokal pada browser ini.</p>
+      <div class="card">
+        <label class="field" for="caseData">A. Data pribadi yang diproses dan data spesifik</label><textarea id="caseData" data-save placeholder="Sebutkan data dan jelaskan kategorinya..."></textarea>
+        <label class="field" for="casePurpose">B. Tujuan utama dan tujuan tambahan</label><textarea id="casePurpose" data-save placeholder="Bedakan tujuan presensi dengan pelatihan model komersial..."></textarea>
+        <label class="field" for="caseBasis">C. Dasar pemrosesan yang mungkin relevan dan informasi yang belum tersedia</label><textarea id="caseBasis" data-save placeholder="Jelaskan kemungkinan dasar dan fakta yang perlu diperiksa..."></textarea>
+        <label class="field" for="caseConsent">D. Persetujuan dan transparansi</label><textarea id="caseConsent" data-save placeholder="Apakah informasi yang tersedia cukup? Mengapa?..."></textarea>
+        <label class="field" for="caseRisk">E. Minimal tiga risiko privasi atau keamanan</label><textarea id="caseRisk" data-save placeholder="Tuliskan risiko dan siapa yang mungkin terdampak..."></textarea>
+        <label class="field" for="caseRights">F. Hak subjek data yang relevan</label><textarea id="caseRights" data-save placeholder="Sebutkan hak dan kondisi yang perlu diperiksa..."></textarea>
+        <label class="field" for="caseRecommendations">G. Minimal tiga rekomendasi perbaikan</label><textarea id="caseRecommendations" data-save placeholder="Berikan rekomendasi yang proporsional dan beralasan..."></textarea>
+        <div class="actions" style="margin-top:15px"><button class="btn primary" id="saveWorksheetBtn">Simpan lembar kerja</button><button class="btn" id="exportWorksheetBtn">Ekspor jawaban</button></div><div id="worksheetFeedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Kuis 1 objektif">
+      <div class="eyebrow"><span class="tag">12</span><span>Kuis 1</span></div><h1 class="title">Tes objektif</h1>
+      <p class="lead">Pilih satu jawaban terbaik pada setiap soal. Nilai objektif maksimal 10 poin. Setelah menjawab, tekan tombol periksa.</p>
+      <form id="quizForm">
+      <div class="card quiz-q" data-q="q1" data-correct="c" data-explain="Data biometrik termasuk data pribadi spesifik menurut UU PDP."><h3>1. Manakah yang secara eksplisit termasuk data pribadi spesifik?</h3><div class="choice-list"><label class="choice"><input type="radio" name="q1" value="a"> A. Nama lengkap</label><label class="choice"><input type="radio" name="q1" value="b"> B. Status perkawinan</label><label class="choice"><input type="radio" name="q1" value="c"> C. Data biometrik</label><label class="choice"><input type="radio" name="q1" value="d"> D. Kewarganegaraan</label></div><div class="feedback" id="f-q1"></div></div>
+      <div class="card quiz-q" data-q="q2" data-correct="b" data-explain="Kombinasi data dapat menjadi data pribadi apabila individu dapat diidentifikasi."><h3>2. Kombinasi NPM, jadwal kuliah, dan lokasi kehadiran dapat dikaitkan dengan seorang mahasiswa. Pernyataan yang tepat adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q2" value="a"> A. Bukan data pribadi karena tidak memuat nomor identitas nasional.</label><label class="choice"><input type="radio" name="q2" value="b"> B. Dapat menjadi data pribadi karena dapat mengidentifikasi mahasiswa.</label><label class="choice"><input type="radio" name="q2" value="c"> C. Hanya data pribadi jika dipublikasikan di internet.</label><label class="choice"><input type="radio" name="q2" value="d"> D. Hanya data pribadi jika menimbulkan kerugian finansial.</label></div><div class="feedback" id="f-q2"></div></div>
+      <div class="card quiz-q" data-q="q3" data-correct="a" data-explain="Minimisasi data membatasi pengumpulan pada data yang relevan dan diperlukan untuk tujuan pemrosesan."><h3>3. Aplikasi presensi mengumpulkan daftar kontak dan riwayat penelusuran tanpa alasan yang jelas. Prinsip yang tepat untuk mengevaluasinya adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q3" value="a"> A. Minimisasi data</label><label class="choice"><input type="radio" name="q3" value="b"> B. Peningkatan akurasi model</label><label class="choice"><input type="radio" name="q3" value="c"> C. Perluasan akses pengguna</label><label class="choice"><input type="radio" name="q3" value="d"> D. Penyimpanan tanpa batas</label></div><div class="feedback" id="f-q3"></div></div>
+      <div class="card quiz-q" data-q="q4" data-correct="d" data-explain="Pemenuhan kewajiban perjanjian adalah salah satu dasar pemrosesan, jika relevan dengan keadaan pemrosesan."><h3>4. Manakah yang merupakan salah satu dasar pemrosesan data pribadi menurut UU PDP?</h3><div class="choice-list"><label class="choice"><input type="radio" name="q4" value="a"> A. Semua data yang tersedia secara daring.</label><label class="choice"><input type="radio" name="q4" value="b"> B. Semua data yang dimiliki penyedia aplikasi.</label><label class="choice"><input type="radio" name="q4" value="c"> C. Semua data yang dianggap berguna oleh pengembang.</label><label class="choice"><input type="radio" name="q4" value="d"> D. Pemenuhan kewajiban perjanjian, apabila relevan.</label></div><div class="feedback" id="f-q4"></div></div>
+      <div class="card quiz-q" data-q="q5" data-correct="c" data-explain="Persetujuan merupakan salah satu dasar pemrosesan dan harus memenuhi ketentuan apabila digunakan sebagai dasar."><h3>5. Pernyataan paling tepat mengenai persetujuan adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q5" value="a"> A. Semua pemrosesan selalu harus memakai persetujuan tanpa pengecualian.</label><label class="choice"><input type="radio" name="q5" value="b"> B. Tombol “Lanjut” selalu cukup sebagai bukti persetujuan yang sah.</label><label class="choice"><input type="radio" name="q5" value="c"> C. Persetujuan adalah salah satu dasar dan harus memenuhi ketentuan apabila digunakan.</label><label class="choice"><input type="radio" name="q5" value="d"> D. Persetujuan untuk satu tujuan otomatis mencakup semua tujuan masa depan.</label></div><div class="feedback" id="f-q5"></div></div>
+      <div class="card quiz-q" data-q="q6" data-correct="a" data-explain="Hak akses dan memperoleh salinan data dapat relevan, sesuai ketentuan yang berlaku."><h3>6. Mahasiswa ingin mengetahui data pribadinya yang diproses oleh aplikasi kampus. Hak yang paling relevan adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q6" value="a"> A. Hak mengakses dan memperoleh salinan data sesuai ketentuan.</label><label class="choice"><input type="radio" name="q6" value="b"> B. Hak mengubah data semua mahasiswa lainnya.</label><label class="choice"><input type="radio" name="q6" value="c"> C. Hak menghapus seluruh basis data kampus.</label><label class="choice"><input type="radio" name="q6" value="d"> D. Hak menentukan seluruh fitur tanpa mempertimbangkan pihak lain.</label></div><div class="feedback" id="f-q6"></div></div>
+      <div class="card quiz-q" data-q="q7" data-correct="b" data-explain="Hak mengajukan keberatan atas keputusan otomatis tertentu perlu diperiksa jika keputusan hanya didasarkan pada pemrosesan otomatis dan menimbulkan akibat hukum atau dampak signifikan."><h3>7. Sistem AI menolak permohonan secara otomatis dan menimbulkan dampak signifikan. Hak yang relevan untuk diperiksa adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q7" value="a"> A. Hak meminta akses ke akun administrator.</label><label class="choice"><input type="radio" name="q7" value="b"> B. Hak mengajukan keberatan atas keputusan otomatis sesuai ketentuan.</label><label class="choice"><input type="radio" name="q7" value="c"> C. Hak menghapus data pemohon lain.</label><label class="choice"><input type="radio" name="q7" value="d"> D. Hak menonaktifkan sistem AI organisasi.</label></div><div class="feedback" id="f-q7"></div></div>
+      <div class="card quiz-q" data-q="q8" data-correct="d" data-explain="Pembagian peran tersebut sesuai asumsi bahwa kampus menentukan tujuan dan penyedia memproses atas nama kampus. Fakta aktual tetap perlu diperiksa."><h3>8. Kampus menentukan tujuan presensi, sementara penyedia memproses data atas nama kampus sesuai instruksi. Pembagian peran yang paling sesuai adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q8" value="a"> A. Kampus sebagai subjek data, penyedia sebagai pengendali.</label><label class="choice"><input type="radio" name="q8" value="b"> B. Kampus sebagai prosesor, penyedia sebagai subjek data.</label><label class="choice"><input type="radio" name="q8" value="c"> C. Kampus dan mahasiswa selalu menjadi prosesor.</label><label class="choice"><input type="radio" name="q8" value="d"> D. Kampus sebagai pengendali dan penyedia sebagai prosesor, jika fakta mendukung.</label></div><div class="feedback" id="f-q8"></div></div>
+      <div class="card quiz-q" data-q="q9" data-correct="c" data-explain="Hak akses sebaiknya dibatasi berdasarkan kebutuhan tugas, bukan diberikan kepada semua staf."><h3>9. Administrator dapat mengakses seluruh data biometrik, padahal tugasnya hanya membutuhkan data kehadiran. Langkah yang tepat adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q9" value="a"> A. Memberikan salinan data kepada semua staf.</label><label class="choice"><input type="radio" name="q9" value="b"> B. Menyimpan data tanpa masa retensi.</label><label class="choice"><input type="radio" name="q9" value="c"> C. Membatasi hak akses berdasarkan kebutuhan tugas.</label><label class="choice"><input type="radio" name="q9" value="d"> D. Menonaktifkan pencatatan aktivitas.</label></div><div class="feedback" id="f-q9"></div></div>
+      <div class="card quiz-q" data-q="q10" data-correct="b" data-explain="Penggunaan untuk tujuan baru perlu dinilai dari tujuan, dasar pemrosesan, transparansi, hak subjek data, dan ketentuan yang berlaku."><h3>10. Penyedia ingin menggunakan data presensi untuk melatih model komersial, sedangkan pemberitahuan awal hanya menyebut presensi. Langkah awal terbaik adalah:</h3><div class="choice-list"><label class="choice"><input type="radio" name="q10" value="a"> A. Langsung menggunakan data karena sudah tersedia.</label><label class="choice"><input type="radio" name="q10" value="b"> B. Menilai tujuan tambahan, dasar pemrosesan, informasi, dan hak subjek data.</label><label class="choice"><input type="radio" name="q10" value="c"> C. Menganggap data boleh digunakan karena disimpan penyedia.</label><label class="choice"><input type="radio" name="q10" value="d"> D. Menghapus semua data tanpa memeriksa kewajiban yang berlaku.</label></div><div class="feedback" id="f-q10"></div></div>
+      <div class="actions"><button type="button" class="btn primary" id="gradeQuizBtn">Periksa jawaban objektif</button><button type="button" class="btn" id="resetQuizBtn">Ulangi kuis</button></div><div id="quizScore" class="feedback"></div>
+      </form>
+    </section>
+
+    <section class="slide" data-title="Respons singkat">
+      <div class="eyebrow"><span class="tag">13</span><span>Kuis 1</span></div><h1 class="title">Respons singkat: analisis kasus</h1>
+      <p class="lead">Jawab berdasarkan fakta. Jika informasi belum tersedia, sebutkan apa yang masih perlu diperiksa. Jawaban tersimpan di browser ini.</p>
+      <div class="card"><h2>Soal 11. KampusPresensi AI</h2><p>Gunakan skenario pada bagian studi kasus.</p><p>Analisis data pribadi dan data spesifik, tujuan utama dan tambahan, dasar pemrosesan yang mungkin relevan, minimal dua risiko, hak subjek data, serta minimal satu rekomendasi perbaikan.</p><label class="field" for="quizShort11">Jawaban soal 11</label><textarea id="quizShort11" data-save style="min-height:180px" placeholder="Susun jawaban Anda secara sistematis..."></textarea><div class="rubric-row"><span>Identifikasi data</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Tujuan utama dan tambahan</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Dasar dan keterbatasan informasi</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Risiko yang relevan</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Hak dan rekomendasi</span><span class="score">1 poin</span></div></div>
+      <div class="card"><h2>Soal 12. Chatbot AI untuk beasiswa</h2><p>Unit kampus memakai chatbot AI eksternal untuk meringkas permohonan beasiswa. Formulir berisi nama, NPM, kondisi keuangan keluarga, informasi kesehatan, dan dokumen pendukung. Pemberitahuan hanya menyatakan data digunakan untuk membantu administrasi beasiswa. Penyedia memiliki fitur penyimpanan percakapan, tetapi belum jelas apakah data akan digunakan untuk melatih model.</p><p>Identifikasi data yang perlu mendapat perhatian khusus, tujuan awal dan penggunaan tambahan yang perlu diperiksa, informasi yang dibutuhkan untuk menentukan dasar pemrosesan, risiko, dan langkah perlindungan sebelum sistem digunakan.</p><label class="field" for="quizShort12">Jawaban soal 12</label><textarea id="quizShort12" data-save style="min-height:180px" placeholder="Susun jawaban Anda secara sistematis..."></textarea><div class="rubric-row"><span>Identifikasi data</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Tujuan awal dan tambahan</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Dasar dan informasi yang belum tersedia</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Risiko privasi/keamanan</span><span class="score">1 poin</span></div><div class="rubric-row"><span>Langkah perlindungan</span><span class="score">1 poin</span></div></div>
+      <div class="callout neutral">Respons singkat dinilai berdasarkan akurasi konsep dan penerapan pada kasus. Jawaban tidak harus menggunakan kalimat yang sama dengan contoh, tetapi harus memiliki alasan yang relevan.</div>
+    </section>
+
+    <section class="slide" data-title="Kunci & rubrik">
+      <div class="eyebrow"><span class="tag">14</span><span>Evaluasi</span></div><h1 class="title">Kunci jawaban dan rubrik dosen</h1>
+      <p class="lead">Kunci lengkap disembunyikan pada mode mahasiswa. Gunakan tombol “Mode Dosen” di bagian atas untuk menampilkan bagian ini.</p>
+      <div class="teacher-only">
+        <div class="card"><h2>Kunci tes objektif</h2><div class="table-scroll"><table class="table"><thead><tr><th>No.</th><th>Jawaban</th><th>Alasan</th></tr></thead><tbody>
+        <tr><td>1</td><td>C</td><td>Data biometrik termasuk data pribadi spesifik menurut UU PDP.</td></tr>
+        <tr><td>2</td><td>B</td><td>Kombinasi data dapat mengidentifikasi individu.</td></tr>
+        <tr><td>3</td><td>A</td><td>Minimisasi data membatasi pengumpulan pada data yang relevan dan diperlukan.</td></tr>
+        <tr><td>4</td><td>D</td><td>Pemenuhan kewajiban perjanjian adalah salah satu dasar jika relevan.</td></tr>
+        <tr><td>5</td><td>C</td><td>Persetujuan merupakan salah satu dasar dan harus memenuhi ketentuan jika digunakan.</td></tr>
+        <tr><td>6</td><td>A</td><td>Hak akses dan memperoleh salinan data relevan sesuai ketentuan.</td></tr>
+        <tr><td>7</td><td>B</td><td>Hak keberatan atas keputusan otomatis tertentu perlu diperiksa sesuai syarat hukum.</td></tr>
+        <tr><td>8</td><td>D</td><td>Peran sesuai asumsi kampus menentukan tujuan dan penyedia memproses atas nama kampus.</td></tr>
+        <tr><td>9</td><td>C</td><td>Akses perlu dibatasi berdasarkan kebutuhan tugas.</td></tr>
+        <tr><td>10</td><td>B</td><td>Tujuan baru perlu dinilai berdasarkan dasar, transparansi, hak, dan ketentuan.</td></tr>
+        </tbody></table></div></div>
+        <div class="card"><h2>Rubrik respons singkat</h2><p><strong>Soal 11, maksimum 5 poin:</strong></p><div class="rubric-row"><span>Data pribadi dan data spesifik tepat</span><span class="score">1</span></div><div class="rubric-row"><span>Tujuan utama dan tambahan dibedakan</span><span class="score">1</span></div><div class="rubric-row"><span>Dasar yang mungkin relevan dan keterbatasan informasi</span><span class="score">1</span></div><div class="rubric-row"><span>Risiko relevan diidentifikasi</span><span class="score">1</span></div><div class="rubric-row"><span>Hak dan rekomendasi masuk akal</span><span class="score">1</span></div><p><strong>Soal 12, maksimum 5 poin:</strong></p><div class="rubric-row"><span>Data yang perlu mendapat perhatian khusus</span><span class="score">1</span></div><div class="rubric-row"><span>Tujuan awal dan tambahan dibedakan</span><span class="score">1</span></div><div class="rubric-row"><span>Dasar dan informasi yang belum tersedia</span><span class="score">1</span></div><div class="rubric-row"><span>Risiko privasi dan keamanan</span><span class="score">1</span></div><div class="rubric-row"><span>Langkah perlindungan relevan</span><span class="score">1</span></div><p><strong>Nilai akhir:</strong> (skor yang diperoleh ÷ 20) × 100.</p><p>Contoh: skor 16 dari 20 menghasilkan nilai 80.</p></div>
+        <div class="card"><h2>Arah jawaban soal 11</h2><p>Templat biometrik adalah data pribadi spesifik. Tujuan pelatihan model komersial perlu dinilai terpisah dari tujuan presensi. Dasar pemrosesan belum dapat dipastikan tanpa informasi tambahan. Risiko dapat mencakup kebocoran biometrik, pelacakan lokasi, dan penggunaan sekunder. Mahasiswa dapat meminta informasi mengenai pemrosesan; hak lain perlu dianalisis sesuai kondisi dan ketentuan.</p></div>
+        <div class="card"><h2>Arah jawaban soal 12</h2><p>Data keuangan dan kesehatan memerlukan perhatian khusus. Perlu diperiksa retensi percakapan, akses penyedia eksternal, penggunaan data untuk pelatihan, dasar pemrosesan, pembatasan data, kontrol akses, dan ketentuan layanan. Rekomendasi dapat mencakup minimisasi data, penilaian penyedia, pengamanan, dan penjelasan tujuan.</p></div>
+      </div>
+      <div class="callout warn teacher-only"><strong>Catatan penilaian:</strong> jangan memberi skor penuh pada jawaban yang hanya menyebut “melanggar hukum” tanpa alasan, fakta, atau penjelasan mengenai informasi yang belum diketahui.</div>
+      <div class="card"><h2>Rumus nilai</h2><p>10 soal objektif × 1 poin dan 2 respons singkat × 5 poin = 20 poin.</p><p><strong>Nilai akhir = (skor diperoleh / 20) × 100.</strong></p></div>
+    </section>
+
+    <section class="slide" data-title="Refleksi & penutup">
+      <div class="eyebrow"><span class="tag">15</span><span>Penutup</span></div><h1 class="title">Refleksi: apakah semua data yang tersedia boleh digunakan?</h1>
+      <p class="lead">Gunakan pertanyaan berikut untuk menguji apakah Anda dapat menghubungkan konsep dengan keputusan praktis.</p>
+      <div class="card"><ol><li>Apakah data yang dapat dikumpulkan oleh aplikasi selalu boleh digunakan?</li><li>Mengapa persetujuan tidak otomatis menyelesaikan seluruh persoalan privasi?</li><li>Apa perbedaan risiko privasi dan risiko keamanan?</li><li>Mengapa penggunaan data untuk melatih model AI perlu diperiksa terpisah dari tujuan awal?</li><li>Siapa yang harus memastikan data digunakan secara bertanggung jawab dalam sistem TI/AI?</li></ol><label class="field" for="reflection">Refleksi pribadi</label><textarea id="reflection" data-save placeholder="Tuliskan 3 sampai 5 kalimat tentang satu hal yang paling penting Anda pelajari..."></textarea><button class="btn primary" id="saveReflectionBtn">Simpan refleksi</button><div id="reflectionFeedback" class="feedback"></div></div>
+      <div class="callout good"><strong>Rangkuman inti:</strong> identifikasi data, pahami tujuan, tentukan dasar yang relevan, nilai persetujuan dan hak, periksa risiko, lalu usulkan perlindungan yang proporsional.</div>
+    </section>
+
+    <section class="slide" data-title="Referensi">
+      <div class="eyebrow"><span class="tag">16</span><span>Sumber belajar</span></div><h1 class="title">Referensi dan catatan penggunaan</h1>
+      <div class="card"><h2>Referensi utama</h2><ol>
+      <li><strong>Oxford Home Study Centre.</strong> <em>Ethics in AI, Topic 3: Privacy and Data Protection.</em> Materi PDF yang menjadi sumber pembahasan tentang persetujuan, pembatasan tujuan, minimisasi data, tantangan privasi AI, regulasi, dan praktik perlindungan data.</li>
+      <li><strong>UNESCO dan LG AI Research.</strong> <em>Global MOOC on the Ethics of AI</em>, khususnya Module 5: <em>Privacy, Data Protection and Data Governance</em>, berdasarkan rincian kursus yang diberikan dalam percakapan.</li>
+      <li><strong>Republik Indonesia.</strong> Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi.</li>
+      </ol>
+      <p><a class="ref-link" href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" target="_blank" rel="noopener">Buka UU PDP pada Database Peraturan BPK</a></p>
+      <p><a class="ref-link" href="https://jdih.komdigi.go.id/produk_hukum/view/id/832" target="_blank" rel="noopener">Buka UU PDP pada JDIH Kementerian Komunikasi dan Digital</a></p></div>
+      <div class="card"><h2>Catatan penting</h2><ul><li>Contoh regulasi dari Oxford yang menggunakan negara lain tidak otomatis berlaku di Indonesia.</li><li>Mahasiswa perlu membedakan dugaan risiko, persoalan etika, dan kesimpulan pelanggaran hukum.</li><li>Materi ini merupakan bahan ajar, bukan nasihat hukum untuk kasus konkret.</li><li>Hak dan kewajiban harus dinilai sesuai ketentuan, fakta, serta pengecualian yang berlaku.</li></ul></div>
+      <div class="card"><h2>Data dan jawaban mahasiswa</h2><p>Jawaban dalam file ini disimpan secara lokal di browser yang digunakan. Jawaban tidak otomatis dikirim kepada dosen atau LMS.</p><div class="actions"><button class="btn primary" id="finalExportBtn">Ekspor semua jawaban ke TXT</button><button class="btn" id="clearBtn">Hapus jawaban lokal</button></div><p class="footnote">Simpan atau ekspor jawaban sebelum menghapus data lokal atau berpindah perangkat.</p></div>
+    </section>
+  </div>
+  <footer class="nav-footer"><button class="btn" id="prevBtn">← Sebelumnya</button><span class="small" id="footerCount">Bagian 1 dari 17</span><div class="right"><button class="btn primary" id="nextBtn">Berikutnya →</button></div></footer>
+</main>
+<aside class="rightbar">
+  <div class="right-block"><div class="right-label">Fokus RPS</div><h3>Sub-CPMK-3</h3><p>Menganalisis privasi, data pribadi, persetujuan, dan keamanan.</p></div>
+  <div class="right-block"><div class="right-label">Checklist analisis</div><ul><li>Data apa yang diproses?</li><li>Tujuannya apa?</li><li>Dasarnya apa?</li><li>Apa risikonya?</li><li>Hak siapa yang relevan?</li></ul></div>
+  <div class="right-block"><div class="right-label">Prinsip berpikir</div><h3>Jangan menyimpulkan terlalu cepat</h3><p>Jika fakta belum cukup, tuliskan informasi yang masih diperlukan untuk menilai kasus.</p></div>
+  <div class="right-block"><div class="right-label">Penyimpanan</div><p>Jawaban tersimpan di browser lokal. Gunakan tombol Ekspor TXT untuk membuat salinan.</p></div>
+</aside>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+const slides=[...document.querySelectorAll('.slide')];
+const navList=document.getElementById('navList');
+const progressFill=document.getElementById('progressFill');
+const progressText=document.getElementById('progressText');
+const crumb=document.getElementById('crumb');
+const footerCount=document.getElementById('footerCount');
+let current=0;
+const STORAGE_KEY='etika_ti_p4_privasi_v1';
+const navGroups=[
+ {label:'Orientasi',start:0,end:1},
+ {label:'Materi inti',start:2,end:9},
+ {label:'Latihan & penilaian',start:10,end:14},
+ {label:'Penutup',start:15,end:16}
+];
+function buildNav(){
+ navList.innerHTML='';
+ navGroups.forEach(g=>{
+  const lab=document.createElement('div');lab.className='course-label';lab.textContent=g.label;navList.appendChild(lab);
+  for(let i=g.start;i<=g.end;i++){
+   const b=document.createElement('button');b.className='nav-item';b.type='button';b.dataset.index=i;
+   b.innerHTML='<span class="nav-num">'+String(i+1).padStart(2,'0')+'</span><span>'+slides[i].dataset.title+'</span>';
+   b.addEventListener('click',()=>show(i));navList.appendChild(b);
+  }
+ });
+}
+function show(index){
+ current=Math.max(0,Math.min(slides.length-1,index));
+ slides.forEach((s,i)=>s.classList.toggle('active',i===current));
+ document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',Number(b.dataset.index)===current));
+ const title=slides[current].dataset.title;
+ crumb.textContent='Pertemuan 4 / '+title;
+ footerCount.textContent='Bagian '+(current+1)+' dari '+slides.length;
+ progressText.textContent=(current+1)+' dari '+slides.length+' bagian';
+ progressFill.style.width=((current+1)/slides.length*100)+'%';
+ document.getElementById('prevBtn').disabled=current===0;
+ document.getElementById('nextBtn').disabled=current===slides.length-1;
+ document.getElementById('prevBtn').style.opacity=current===0?'.45':'1';
+ document.getElementById('nextBtn').style.opacity=current===slides.length-1?'.45':'1';
+ document.getElementById('sidebar').classList.remove('open');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function toast(msg){
+ const el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');
+ clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2300);
+}
+function collect(){
+ const data={};
+ document.querySelectorAll('[data-save],textarea,input[type=text],input[type=date],select,input[type=radio]:checked').forEach(el=>{
+  if(!el.id && !el.name)return;
+  const key=el.id||el.name;
+  if(el.type==='radio'){
+   const group=document.querySelectorAll('input[type=radio][name="'+CSS.escape(el.name)+'"]:checked');
+   if(group.length)data[key]=group[0].value;
+  }else data[key]=el.value;
+ });
+ const checkedRadios={};
+ document.querySelectorAll('input[type=radio]:checked').forEach(el=>checkedRadios[el.name]=el.value);
+ data._checkedRadios=checkedRadios;
+ return data;
+}
+function save(silent=false){
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(collect()));if(!silent)toast('Jawaban tersimpan di browser ini.');}
+ catch(e){if(!silent)toast('Penyimpanan lokal tidak tersedia pada browser ini. Gunakan Ekspor TXT.');}
+}
+function load(){
+ try{
+  const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.keys(data).forEach(key=>{
+   if(key==='_checkedRadios')return;
+   const els=[...document.querySelectorAll('#'+CSS.escape(key))];
+   if(els.length && els[0].type!=='radio')els[0].value=data[key];
+  });
+  Object.entries(data._checkedRadios||{}).forEach(([name,value])=>{
+   const el=document.querySelector('input[type=radio][name="'+CSS.escape(name)+'"][value="'+CSS.escape(value)+'"]');if(el)el.checked=true;
+  });
+ }catch(e){}
+}
+function exportTxt(){
+ save(true);
+ const data=collect();
+ const labels={
+  dataDetective:'Latihan Data Detective',purposeExercise:'Latihan Tujuan dan Minimisasi',legalBasisExercise:'Latihan Dasar Pemrosesan',dataRightsExercise:'Latihan Hak Subjek Data',
+  caseData:'Kasus KampusPresensi AI - Data',casePurpose:'Kasus KampusPresensi AI - Tujuan',caseBasis:'Kasus KampusPresensi AI - Dasar Pemrosesan',caseConsent:'Kasus KampusPresensi AI - Persetujuan',caseRisk:'Kasus KampusPresensi AI - Risiko',caseRights:'Kasus KampusPresensi AI - Hak',caseRecommendations:'Kasus KampusPresensi AI - Rekomendasi',
+  quizShort11:'Kuis Respons Singkat 11',quizShort12:'Kuis Respons Singkat 12',reflection:'Refleksi'
+ };
+ let lines=['PAKET PEMBELAJARAN PERTEMUAN 4','Etika Teknologi Informasi dan Tanggung Jawab AI','Privasi, Data Pribadi, Persetujuan, dan Keamanan',''];
+ Object.keys(labels).forEach(k=>{if((data[k]||'').trim())lines.push(labels[k]+':\n'+data[k]+'\n');});
+ const quiz=[];
+ for(let i=1;i<=10;i++){const v=data['q'+i];quiz.push('Soal '+i+': '+(v?String(v).toUpperCase():'Belum dijawab'));}
+ lines.push('JAWABAN KUIS OBJEKTIF',...quiz);
+ const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Jawaban_Pertemuan_4_Privasi_Data.txt';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+ toast('File TXT dibuat.');
+}
+buildNav();load();show(0);
+document.getElementById('prevBtn').addEventListener('click',()=>show(current-1));
+document.getElementById('nextBtn').addEventListener('click',()=>show(current+1));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.go))));
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+document.getElementById('teacherBtn').addEventListener('click',()=>{
+ document.body.classList.toggle('teacher-mode');
+ const on=document.body.classList.contains('teacher-mode');
+ document.getElementById('teacherBtn').classList.toggle('active',on);
+ document.getElementById('teacherBtn').textContent=on?'Mode Dosen Aktif':'Mode Dosen';
+ toast(on?'Bagian kunci jawaban dosen ditampilkan.':'Mode mahasiswa aktif.');
+});
+document.getElementById('saveBtn').addEventListener('click',()=>save(false));
+document.getElementById('exportBtn').addEventListener('click',exportTxt);
+document.getElementById('finalExportBtn').addEventListener('click',exportTxt);
+document.getElementById('exportWorksheetBtn').addEventListener('click',exportTxt);
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+document.getElementById('saveWorksheetBtn').addEventListener('click',()=>{save(true);const f=document.getElementById('worksheetFeedback');f.className='feedback show good';f.textContent='Lembar kerja tersimpan secara lokal. Gunakan Ekspor TXT untuk membuat salinan.';});
+document.getElementById('saveReflectionBtn').addEventListener('click',()=>{save(true);const f=document.getElementById('reflectionFeedback');f.className='feedback show good';f.textContent='Refleksi tersimpan secara lokal pada browser ini.';});
+document.getElementById('clearBtn').addEventListener('click',()=>{
+ if(confirm('Hapus seluruh jawaban yang tersimpan pada browser ini? Tindakan ini tidak dapat dibatalkan.')){
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('[data-save],textarea,input[type=text],input[type=date],select').forEach(el=>el.value='');
+  document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false);
+  document.querySelectorAll('.feedback').forEach(el=>{el.classList.remove('show','good','bad');el.textContent='';});
+  toast('Jawaban lokal dihapus.');
+ }
+});
+document.querySelectorAll('[data-check]').forEach(btn=>btn.addEventListener('click',()=>{
+ const name=btn.dataset.check;const chosen=document.querySelector('input[name="'+CSS.escape(name)+'"]:checked');const f=document.getElementById(btn.dataset.feedback);
+ f.classList.add('show');
+ if(!chosen){f.className='feedback show bad';f.textContent='Pilih jawaban terlebih dahulu.';return;}
+ if(chosen.value===btn.dataset.answer){f.className='feedback show good';f.textContent='Tepat. Nilai setiap data berdasarkan tujuan, dasar pemrosesan, relevansi, dan risiko, bukan sekadar karena data tersedia.';}
+ else{f.className='feedback show bad';f.textContent='Belum tepat. Tinjau kembali relevansi data, tujuan pemrosesan, dan risiko bagi individu.';}
+ save(true);
+}));
+document.getElementById('gradeQuizBtn').addEventListener('click',()=>{
+ let score=0,answered=0;
+ document.querySelectorAll('.quiz-q').forEach(card=>{
+  const q=card.dataset.q,correct=card.dataset.correct,chosen=document.querySelector('input[name="'+q+'"]:checked'),f=document.getElementById('f-'+q);
+  f.classList.add('show');
+  if(!chosen){f.className='feedback show bad';f.textContent='Belum dijawab. '+card.dataset.explain;return;}
+  answered++;
+  if(chosen.value===correct){score++;f.className='feedback show good';f.textContent='Benar. '+card.dataset.explain;}
+  else{f.className='feedback show bad';f.textContent='Belum tepat. '+card.dataset.explain;}
+ });
+ const box=document.getElementById('quizScore');box.className='feedback show '+(score>=7?'good':'bad');box.innerHTML='<strong>Skor objektif: '+score+'/10 ('+(score*10)+'%)</strong><br>Soal dijawab: '+answered+'/10. Ini umpan balik formatif, bukan nilai akhir Kuis 1. Respons singkat dinilai dengan rubrik.';
+ save(true);toast('Kuis diperiksa. Jawaban tersimpan.');
+});
+document.getElementById('resetQuizBtn').addEventListener('click',()=>{
+ document.querySelectorAll('#quizForm input[type=radio]').forEach(el=>el.checked=false);
+ document.querySelectorAll('#quizForm .feedback').forEach(el=>{el.className='feedback';el.textContent='';});
+ const box=document.getElementById('quizScore');box.className='feedback';box.textContent='';save(true);toast('Jawaban kuis direset pada formulir.');
+});
+document.querySelectorAll('textarea,input,select').forEach(el=>el.addEventListener('change',()=>save(true)));
+document.querySelectorAll('textarea').forEach(el=>el.addEventListener('input',()=>{clearTimeout(window.autosaveTimer);window.autosaveTimer=setTimeout(()=>save(true),500);}));
+})();
+</script>
+</body>
+</html>
