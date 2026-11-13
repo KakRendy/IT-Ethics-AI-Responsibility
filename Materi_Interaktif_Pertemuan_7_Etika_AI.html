@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Materi interaktif Etika Teknologi Informasi dan Tanggung Jawab AI - Pertemuan 7: privasi, bias, fairness, studi kasus nyata dan latihan.">
+<title>Pertemuan 7 | Etika TI & Tanggung Jawab AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#101d36;--navy2:#172b4d;--blue:#2864dc;--cyan:#42c6d9;--ink:#17243a;--muted:#62718a;--paper:#f4f7fb;--line:#dce4ef;--white:#fff;--green:#16845d;--red:#c74747;--gold:#c78a22;--shadow:0 16px 45px rgba(24,43,75,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65}h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.2;margin:0 0 12px}p{margin:8px 0 14px}a{color:#1f5cc7;text-decoration:none}a:hover{text-decoration:underline}.topbar{position:sticky;top:0;z-index:50;background:rgba(16,29,54,.96);color:#fff;backdrop-filter:blur(12px);padding:12px 5vw;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:800;letter-spacing:.02em}.brand small{display:block;color:#b9c9e2;font-weight:500;font-size:11px}.progress-wrap{display:flex;align-items:center;gap:10px;min-width:180px}.progress{height:7px;background:#40516d;border-radius:20px;overflow:hidden;flex:1}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),#8ee3dc);transition:width .35s}.progress-label{font-size:12px;color:#d5e0f0;white-space:nowrap}.hero{background:radial-gradient(circle at 85% 20%,#2d6c9d 0,transparent 30%),linear-gradient(120deg,#101d36,#1d3d67 65%,#146477);color:#fff;padding:70px 7vw 64px;position:relative;overflow:hidden}.hero:after{content:"AI";position:absolute;right:6vw;bottom:-75px;font:800 280px Manrope;color:rgba(255,255,255,.045)}.eyebrow{display:inline-flex;padding:6px 12px;border:1px solid rgba(255,255,255,.25);border-radius:30px;color:#bceef0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(32px,5vw,58px);max-width:850px;margin:18px 0}.hero p{max-width:720px;color:#d7e3f2;font-size:17px}.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.pill{padding:7px 12px;border-radius:30px;background:rgba(255,255,255,.12);font-size:12px}.layout{max-width:1180px;margin:0 auto;padding:30px 22px 80px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:26px}.sidebar{position:sticky;top:78px;align-self:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}.sidebar h3{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.navlink{display:block;padding:9px 10px;margin:3px 0;border-radius:9px;color:#34435c;font-size:13px}.navlink:hover,.navlink.active{background:#eaf1ff;color:#174eae;text-decoration:none;font-weight:700}.content{min-width:0}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:22px;box-shadow:var(--shadow)}.section-kicker{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:9px}.card h2{font-size:clamp(23px,3vw,32px)}.card h3{font-size:19px;margin-top:24px}.lead{font-size:17px;color:#40516c}.callout{border-left:4px solid var(--cyan);background:#eef9fb;padding:14px 17px;border-radius:0 12px 12px 0;margin:18px 0}.warning{border-left-color:#e2a53a;background:#fff8e9}.case-head{display:grid;grid-template-columns:1fr 220px;gap:22px;align-items:center}.case-head img{width:100%;height:160px;object-fit:cover;border-radius:14px;background:#e9eef5}.case-tag{display:inline-block;font-size:11px;font-weight:800;color:#1761b7;background:#eaf2ff;padding:5px 9px;border-radius:20px;margin-bottom:9px}.case-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.fact{background:#f5f8fc;border:1px solid #e5ebf3;border-radius:12px;padding:12px}.fact b{display:block;font-size:12px;color:#6b7890}.fact span{font-weight:700;font-size:14px}.photo-credit{font-size:11px;color:#7c899b;margin-top:5px}.source-list{padding-left:19px}.source-list li{margin:8px 0}.source-list a{font-weight:700}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini{background:#f6f8fc;border:1px solid #e4eaf2;padding:15px;border-radius:13px}.mini h4{font-size:14px;margin:0 0 6px}.table-wrap{overflow:auto;margin:14px 0}table{width:100%;border-collapse:collapse;font-size:13px;min-width:570px}th,td{padding:11px;border:1px solid #e0e7f0;text-align:left;vertical-align:top}th{background:#edf3fb;color:#263c5d}.quiz{background:#f8faff;border:1px solid #dbe6f5;border-radius:15px;padding:20px;margin-top:22px}.quiz h3{margin:0 0 5px}.q{padding:15px 0;border-top:1px solid #e1e8f2}.q:first-of-type{border-top:0}.q-title{font-weight:700;margin-bottom:9px}.options{display:grid;gap:7px}.opt{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;background:#fff;border:1px solid #e1e8f2;border-radius:9px;cursor:pointer;font-size:14px}.opt input{margin-top:5px;accent-color:var(--blue)}select,input[type=text],textarea{font:inherit;border:1px solid #cbd6e5;border-radius:9px;padding:9px 11px;background:#fff;color:var(--ink);max-width:100%}select{min-width:150px}.answerline{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.order-row,.match-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;padding:9px 11px;border:1px solid #e1e8f2;border-radius:9px;margin:7px 0;font-size:14px}.order-row select{width:80px;min-width:70px}.match-row select{min-width:190px}.btn{border:0;background:var(--blue);color:#fff;font-weight:700;border-radius:10px;padding:11px 17px;cursor:pointer;font:700 14px "DM Sans";transition:transform .2s,background .2s}.btn:hover{background:#174eb4;transform:translateY(-1px)}.btn.secondary{background:#e8eef8;color:#24436e}.feedback{display:none;margin-top:12px;padding:12px;border-radius:10px;font-size:14px}.feedback.show{display:block}.feedback.good{background:#e9f8f0;color:#126442}.feedback.bad{background:#fff0ef;color:#9d3434}.score{font:800 22px Manrope}.foot{padding:28px 7vw;background:#101d36;color:#d5dfed;font-size:12px}.foot a{color:#9bdfe8}.reveal{opacity:0;transform:translateY(18px)}.tag{display:inline-block;border-radius:7px;padding:3px 8px;background:#f0f3f8;color:#596981;font-size:11px;font-weight:700}.note{font-size:12px;color:#728099}.divider{height:1px;background:var(--line);margin:20px 0}.image-wide{width:100%;max-height:280px;object-fit:cover;border-radius:13px;margin:12px 0}.two-img{display:grid;grid-template-columns:1fr 1fr;gap:12px}.two-img img{width:100%;height:180px;object-fit:cover;border-radius:12px}.end-banner{background:linear-gradient(120deg,#16355d,#226b80);color:#fff;padding:25px;border-radius:16px}.end-banner p{color:#dcecf3}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0;display:flex;gap:5px;overflow:auto;white-space:nowrap}.sidebar h3{display:none}.navlink{display:inline-block}.case-head{grid-template-columns:1fr}.case-head img{height:210px}.case-facts{grid-template-columns:1fr 1fr}.hero{padding:48px 6vw}.hero:after{font-size:150px}.progress-wrap{min-width:130px}}
+@media(max-width:560px){.card{padding:19px}.layout{padding:18px 12px 50px}.grid2,.two-img{grid-template-columns:1fr}.case-facts{grid-template-columns:1fr}.topbar{padding:10px 14px}.brand{font-size:13px}.progress-label{display:none}.hero p{font-size:15px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">ETIKA AI <small>BAHAN AJAR INTERAKTIF · PERTEMUAN 7</small></div>
+  <div class="progress-wrap"><div class="progress"><span id="progressBar"></span></div><div class="progress-label" id="progressLabel">0% dipelajari</div></div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Sub-CPMK 4 · Privacy, Bias & Fairness</span>
+  <h1>Ketika AI Tidak Adil:<br>Privasi, Bias, dan Mitigasi Risiko</h1>
+  <p>Belajar dari kasus nyata Clearview AI, algoritma kesehatan, skandal tunjangan anak Belanda, dan Gender Shades. Baca bukti, analisis dampak, lalu uji pemahaman melalui latihan interaktif.</p>
+  <div class="hero-meta">
+    <span class="pill">2 SKS · Semester 7</span><span class="pill">Studi kasus nyata</span><span class="pill">7 tipe latihan interaktif</span><span class="pill">Bahasa Indonesia</span>
+  </div>
+</section>
+
+<div class="layout">
+<nav class="sidebar">
+<h3>Daftar materi</h3>
+<a class="navlink active" href="#tujuan">Tujuan belajar</a>
+<a class="navlink" href="#privasi">1. Clearview AI</a>
+<a class="navlink" href="#kesehatan">2. Algoritma kesehatan</a>
+<a class="navlink" href="#belanda">3. Kasus Belanda</a>
+<a class="navlink" href="#gender">4. Gender Shades</a>
+<a class="navlink" href="#mitigasi">5. Mitigasi risiko</a>
+<a class="navlink" href="#evaluasi">Evaluasi akhir</a>
+<a class="navlink" href="#referensi">Referensi</a>
+</nav>
+
+<main class="content">
+<section class="card reveal" id="tujuan">
+<div class="section-kicker">Orientasi pembelajaran</div>
+<h2>Tujuan dan peta konsep</h2>
+<p class="lead">Setelah mempelajari materi, mahasiswa mampu mengidentifikasi sumber risiko privasi dan bias, menganalisis kelompok terdampak, menilai fairness, serta merancang mitigasi awal yang dapat diuji.</p>
+<div class="grid2">
+<div class="mini"><h4>Privasi</h4>Bagaimana data pribadi dikumpulkan, digunakan, disimpan, dibagikan, dan dihapus?</div>
+<div class="mini"><h4>Bias</h4>Apakah data, pengukuran, model, atau penerapannya menghasilkan ketimpangan?</div>
+<div class="mini"><h4>Fairness</h4>Apakah hasil dan proses keputusan AI adil dalam konteks penggunaannya?</div>
+<div class="mini"><h4>Mitigasi</h4>Kontrol apa yang dapat mengurangi kemungkinan dan dampak risiko?</div>
+</div>
+<div class="callout"><b>Pengingat akademik:</b> bias atau perbedaan hasil antarkelompok merupakan sinyal untuk diperiksa, bukan otomatis bukti diskriminasi. Analisis harus melihat konteks, variabel, kualitas data, dampak, dan dasar keputusan.</div>
+<div class="quiz" data-quiz="intro">
+<h3>Cek pemahaman 1 · Single choice</h3><p class="note">Pilih satu jawaban paling tepat.</p>
+<div class="q" data-type="single" data-answer="b">
+<div class="q-title">1. Apa fokus utama analisis risiko etika AI?</div>
+<div class="options">
+<label class="opt"><input type="radio" name="i1" value="a"> Memastikan AI selalu menggantikan keputusan manusia.</label>
+<label class="opt"><input type="radio" name="i1" value="b"> Mengidentifikasi kemungkinan dampak negatif dan mengelolanya.</label>
+<label class="opt"><input type="radio" name="i1" value="c"> Meningkatkan kecepatan komputasi saja.</label>
+<label class="opt"><input type="radio" name="i1" value="d"> Menghapus seluruh data pelatihan.</label>
+</div></div>
+<button class="btn check-btn">Periksa jawaban</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="privasi">
+<div class="section-kicker">Subbab 1 · Privasi dan data biometrik</div>
+<div class="case-head">
+<div><span class="case-tag">KASUS NYATA 01 · CLEARVIEW AI</span><h2>Foto yang tersedia di internet, apakah bebas digunakan?</h2><p class="lead">Kasus pengumpulan foto wajah dari internet untuk membangun layanan pencarian identitas berbasis pengenalan wajah.</p></div>
+<img src="https://image.demorgen.be/235291180/width/2480/hoan-ton-that-medeoprichter-van-clearview-ai-testte-de-gezichtsherkenningstool" alt="Ilustrasi antarmuka pencarian wajah Clearview AI" loading="lazy">
+</div>
+<div class="photo-credit">Gambar: foto ilustrasi antarmuka Clearview AI yang dimuat De Morgen. Bukan tangkapan layar dokumen regulator. Sumber foto: <a href="https://www.demorgen.be/tech-wetenschap/de-technologie-die-facebook-en-google-niet-durven-vrij-te-geven~b2836e5b/" target="_blank" rel="noopener">De Morgen</a>.</div>
+<div class="case-facts">
+<div class="fact"><b>Regulator</b><span>OAIC, Australia</span></div><div class="fact"><b>Temuan</b><span>3 Nov 2021</span></div><div class="fact"><b>Isu</b><span>Data biometrik</span></div>
+</div>
+<h3>1.1 Kronologi dan fakta kasus</h3>
+<p>Clearview AI mengumpulkan foto dari situs internet yang tersedia untuk publik, termasuk media sosial, lalu menggunakannya untuk membangun basis data pengenalan wajah. Pengguna layanan dapat mengunggah foto seseorang untuk mencari foto lain yang cocok dan sumber kemunculannya di internet.</p>
+<p>Pada 3 November 2021, Office of the Australian Information Commissioner (OAIC) menyatakan Clearview AI melanggar privasi warga Australia. Temuan regulator mencakup pengumpulan informasi sensitif tanpa persetujuan, cara pengumpulan yang tidak adil, pemberitahuan yang tidak memadai, dan kelemahan tata kelola. OAIC memerintahkan perusahaan menghentikan pengumpulan foto wajah dan menghapus gambar serta templat biometrik warga Australia yang telah dikumpulkan.</p>
+<div class="callout"><b>Fakta penting:</b> OAIC menyebut basis data Clearview AI berisi lebih dari tiga miliar gambar yang diambil dari media sosial dan situs web yang tersedia untuk publik. Status “tersedia untuk publik” tidak otomatis menghilangkan kewajiban pelindungan data pribadi.</div>
+<h3>1.2 Analisis risiko privasi</h3>
+<div class="table-wrap"><table><tr><th>Aspek</th><th>Temuan / pertanyaan analitis</th></tr>
+<tr><td>Data biometrik</td><td>Foto wajah diproses menjadi templat biometrik untuk pencarian identitas.</td></tr>
+<tr><td>Transparansi</td><td>Apakah individu mengetahui bahwa fotonya dikumpulkan dan digunakan untuk tujuan tersebut?</td></tr>
+<tr><td>Tujuan pemrosesan</td><td>Apakah penggunaan foto untuk pencarian identitas sesuai dengan ekspektasi dan dasar pemrosesan yang berlaku?</td></tr>
+<tr><td>Akuntabilitas</td><td>Bagaimana organisasi membuktikan kepatuhan, keamanan, dan mekanisme penghapusan data?</td></tr>
+</table></div>
+<h3>1.3 Prinsip mitigasi</h3>
+<ul><li><b>Data minimization:</b> batasi data pada hal yang benar-benar diperlukan.</li><li><b>Purpose limitation:</b> tetapkan tujuan pemrosesan yang spesifik dan sah.</li><li><b>Transparency:</b> berikan informasi yang mudah dipahami.</li><li><b>Access control:</b> batasi siapa yang dapat mengakses data biometrik.</li><li><b>Retention and deletion:</b> tetapkan masa simpan dan prosedur penghapusan.</li></ul>
+<p><b>Hubungan dengan Indonesia:</b> diskusikan prinsip pemrosesan data pribadi dalam UU No. 27 Tahun 2022, termasuk dasar pemrosesan, transparansi, pembatasan tujuan, keamanan, dan hak subjek data. Analisis hukum harus memperhatikan konteks dan yurisdiksi; keputusan OAIC adalah penerapan hukum Australia.</p>
+<div class="source-list"><b>Sumber kasus utama:</b><ul><li><a href="https://www.oaic.gov.au/news/media-centre/clearview-ai-breached-australians-privacy" target="_blank" rel="noopener">OAIC (2021) – Clearview AI breached Australians’ privacy</a></li><li><a href="https://www.oaic.gov.au/__data/assets/pdf_file/0016/11284/Commissioner-initiated-investigation-into-Clearview-AI%2C-Inc.-Privacy-2021-AICmr-54-14-October-2021.pdf" target="_blank" rel="noopener">OAIC – Keputusan dan alasan resmi (PDF)</a></li><li><a href="https://www.oaic.gov.au/about-the-OAIC/our-regulatory-approach/our-international-work" target="_blank" rel="noopener">OAIC – Riwayat investigasi lintas negara dan banding</a></li></ul></div>
+<div class="quiz" data-quiz="clearview">
+<h3>Latihan 1 · Privasi Clearview AI</h3><p class="note">Kerjakan seluruh bentuk latihan pada subbab ini.</p>
+<div class="q" data-type="multi" data-answer="a,c">
+<div class="q-title">1. Multiple choice — Pilih semua temuan yang sesuai dengan keputusan OAIC.</div>
+<div class="options">
+<label class="opt"><input type="checkbox" value="a"> Mengumpulkan informasi sensitif tanpa persetujuan.</label>
+<label class="opt"><input type="checkbox" value="b"> Seluruh foto di internet otomatis bebas dipakai untuk tujuan apa pun.</label>
+<label class="opt"><input type="checkbox" value="c"> Tidak mengambil langkah pemberitahuan yang wajar kepada individu.</label>
+<label class="opt"><input type="checkbox" value="d"> OAIC menyatakan semua sistem pengenalan wajah dilarang di seluruh dunia.</label>
+</div></div>
+<div class="q" data-type="tf" data-answer="false">
+<div class="q-title">2. True / False — Karena foto dapat dilihat publik, pemrosesan biometrik untuk tujuan baru tidak lagi menimbulkan persoalan privasi.</div>
+<div class="options"><label class="opt"><input type="radio" name="cv2" value="true"> True</label><label class="opt"><input type="radio" name="cv2" value="false"> False</label></div></div>
+<div class="q" data-type="fill" data-answer="biometrik">
+<div class="q-title">3. Lengkapi satu kata — Foto wajah yang diproses untuk mengenali identitas dapat menghasilkan data ______.</div>
+<input type="text" placeholder="Satu kata..." aria-label="Jawaban satu kata">
+</div>
+<div class="q" data-type="essay" data-keywords="persetujuan,tujuan,transparansi,akses,penghapusan">
+<div class="q-title">4. Esai singkat — Sebutkan dua kontrol yang seharusnya diterapkan sebelum organisasi mengumpulkan dan memproses data wajah.</div>
+<textarea rows="3" placeholder="Tulis jawaban 2–4 kalimat..."></textarea><div class="note">Dinilai sebagai latihan mandiri berdasarkan kata kunci dan kelengkapan alasan.</div>
+</div>
+<button class="btn check-btn">Periksa jawaban</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="kesehatan">
+<div class="section-kicker">Subbab 2 · Bias pengukuran dan fairness</div>
+<div class="case-head">
+<div><span class="case-tag">KASUS NYATA 02 · OBERMEYER ET AL.</span><h2>Ketika biaya kesehatan dianggap sama dengan kebutuhan kesehatan</h2><p class="lead">Penelitian di jurnal Science menunjukkan bagaimana pemilihan variabel pengganti (proxy) dapat menghasilkan bias rasial.</p></div>
+<img src="https://jakerobg.github.io/machine-learning-blog/posts/replication-study/index_files/figure-html/cell-5-output-1.png" alt="Grafik biaya kesehatan dan skor risiko algoritmik" loading="lazy">
+</div>
+<div class="photo-credit">Visualisasi data dari tulisan replikasi independen yang membahas studi Obermeyer et al.; bukan gambar rumah sakit atau figure asli jurnal. <a href="https://jakerobg.github.io/machine-learning-blog/posts/replication-study/" target="_blank" rel="noopener">Sumber visualisasi</a>.</div>
+<div class="case-facts"><div class="fact"><b>Jurnal</b><span>Science</span></div><div class="fact"><b>Tahun</b><span>2019</span></div><div class="fact"><b>Fokus</b><span>Proxy bias</span></div></div>
+<h3>2.1 Kronologi dan temuan penelitian</h3>
+<p>Obermeyer dan rekan meneliti algoritma yang digunakan untuk membantu mengidentifikasi pasien dengan kebutuhan perawatan kesehatan kompleks. Mereka menemukan bahwa algoritma tersebut memprediksi biaya pelayanan kesehatan sebagai pengganti kebutuhan kesehatan.</p>
+<p>Karena akses pelayanan kesehatan tidak setara, biaya yang dikeluarkan untuk pasien kulit hitam rata-rata lebih rendah daripada pasien kulit putih pada kondisi kesehatan yang sebanding. Akibatnya, algoritma meremehkan tingkat kebutuhan kesehatan pasien kulit hitam pada skor risiko yang sama.</p>
+<div class="callout"><b>Angka utama dari penelitian:</b> memperbaiki ketimpangan tersebut diperkirakan meningkatkan proporsi pasien kulit hitam yang menerima bantuan tambahan dari 17,7% menjadi 46,5%. Angka ini berasal dari analisis peneliti, bukan hasil uji intervensi layanan kesehatan secara langsung.</div>
+<h3>2.2 Mengapa ini termasuk measurement bias?</h3>
+<p>Variabel biaya memang mudah diukur, tetapi tidak identik dengan tingkat penyakit atau kebutuhan klinis. Ketika proxy yang digunakan tidak mewakili konsep yang hendak diprediksi, model dapat menghasilkan keputusan yang sistematis tidak adil.</p>
+<div class="grid2"><div class="mini"><h4>Target yang diinginkan</h4>Mengidentifikasi pasien yang membutuhkan bantuan kesehatan tambahan.</div><div class="mini"><h4>Proxy yang digunakan</h4>Biaya pelayanan kesehatan yang telah dikeluarkan.</div></div>
+<h3>2.3 Strategi mitigasi</h3>
+<ol><li>Definisikan target prediksi berdasarkan kebutuhan klinis yang relevan.</li><li>Audit proxy dan fitur untuk menemukan ketimpangan struktural.</li><li>Uji performa dan tingkat kesalahan pada kelompok yang berbeda.</li><li>Libatkan tenaga kesehatan dan pihak terdampak dalam validasi.</li><li>Monitor dampak model setelah diterapkan.</li></ol>
+<div class="source-list"><b>Sumber akademik primer:</b><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/31649194/" target="_blank" rel="noopener">Obermeyer et al. (2019), Science – PubMed record dan abstrak gratis</a></li><li><a href="https://doi.org/10.1126/science.aax2342" target="_blank" rel="noopener">DOI: 10.1126/science.aax2342</a></li><li><a href="https://escholarship.org/uc/item/6h92v832" target="_blank" rel="noopener">UC eScholarship – salinan/rekaman publikasi</a></li></ul></div>
+<div class="quiz" data-quiz="health">
+<h3>Latihan 2 · Bias algoritma kesehatan</h3>
+<div class="q" data-type="single" data-answer="c">
+<div class="q-title">1. Single choice — Apa sumber utama bias yang dijelaskan dalam penelitian Obermeyer et al.?</div>
+<div class="options">
+<label class="opt"><input type="radio" name="h1" value="a"> Algoritma tidak menggunakan data sama sekali.</label>
+<label class="opt"><input type="radio" name="h1" value="b"> Semua pasien memiliki biaya kesehatan yang sama.</label>
+<label class="opt"><input type="radio" name="h1" value="c"> Biaya kesehatan digunakan sebagai proxy kebutuhan kesehatan.</label>
+<label class="opt"><input type="radio" name="h1" value="d"> Sistem hanya memproses foto wajah.</label>
+</div></div>
+<div class="q" data-type="tf" data-answer="true">
+<div class="q-title">2. True / False — Variabel yang mudah diukur belum tentu menjadi representasi yang tepat untuk konsep yang ingin diprediksi.</div>
+<div class="options"><label class="opt"><input type="radio" name="h2" value="true"> True</label><label class="opt"><input type="radio" name="h2" value="false"> False</label></div></div>
+<div class="q" data-type="essay" data-keywords="proxy,biaya,kebutuhan,klinis,kelompok">
+<div class="q-title">3. Esai singkat — Jelaskan mengapa biaya kesehatan dapat menjadi proxy yang bermasalah untuk mengukur kebutuhan kesehatan.</div>
+<textarea rows="3" placeholder="Tulis jawaban 2–4 kalimat..."></textarea></div>
+<button class="btn check-btn">Periksa jawaban</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="belanda">
+<div class="section-kicker">Subbab 3 · Bias sistemik dan diskriminasi</div>
+<div class="case-head">
+<div><span class="case-tag">KASUS NYATA 03 · BELANDA</span><h2>Algoritma tunjangan anak dan profil risiko berdasarkan kebangsaan</h2><p class="lead">Kasus layanan publik yang memperlihatkan bagaimana penggunaan algoritma tanpa pengawasan memadai dapat memperbesar diskriminasi.</p></div>
+<img src="https://images.nrc.nl/Gq0FGeRZi3oNvdHFncl4ooHv5FY%3D/1280x/filters%3Ano_upscale%28%29/s3/static.nrc.nl/bvhw/files/2023/02/data96301242-e25c38.jpg" alt="Orang tua terdampak skandal tunjangan anak di Belanda" loading="lazy">
+</div>
+<div class="photo-credit">Foto kelompok orang tua terdampak yang diberitakan NRC saat penyerahan petisi. <a href="https://www.nrc.nl/nieuws/2023/02/01/herstel-toeslagenschandaal-loopt-vast-door-angstcultuur-en-interne-chaos-2-a4155893" target="_blank" rel="noopener">Sumber foto NRC</a>.</div>
+<div class="case-facts"><div class="fact"><b>Negara</b><span>Belanda</span></div><div class="fact"><b>Model risiko</b><span>2013</span></div><div class="fact"><b>Laporan</b><span>Amnesty, 2021</span></div></div>
+<h3>3.1 Kronologi dan fakta kasus</h3>
+<p>Otoritas pajak Belanda menggunakan sistem klasifikasi risiko untuk menandai permohonan tunjangan pengasuhan anak yang dianggap berpotensi tidak akurat atau mengandung kecurangan. Kebangsaan menjadi salah satu faktor risiko dalam sistem tersebut.</p>
+<p>Amnesty International melaporkan bahwa penggunaan kebangsaan menghasilkan diskriminasi dan racial profiling. Keluarga yang ditandai menghadapi pemeriksaan dan penghentian tunjangan. Skandal ini melibatkan puluhan ribu orang tua dan pengasuh yang terdampak tuduhan kecurangan yang keliru. Laporan Amnesty juga menyoroti sistem yang tidak transparan dan lemahnya pengawasan manusia.</p>
+<div class="two-img"><img src="https://redactie.rtl.nl/sites/default/files/content/images/2020/11/17/ANP-425249943.jpg?height=768&impolicy=semi_dynamic&itok=raUDXDxy&width=1024" alt="Sidang dengar pendapat terkait skandal tunjangan anak Belanda" loading="lazy"><img src="https://www.tweedekamer.nl/sites/default/files/styles/medium/public/atoms/images/commissie_toeslagen_020720625-1920_3.jpg?itok=O3UDx3bc" alt="Komite penyelidikan parlemen Belanda" loading="lazy"></div>
+<div class="photo-credit">Foto sidang dan komite parlemen: RTL Nieuws dan Tweede Kamer. Foto menggambarkan konteks penyelidikan, bukan tampilan algoritma itu sendiri.</div>
+<h3>3.2 Analisis etika</h3>
+<div class="table-wrap"><table><tr><th>Aspek</th><th>Analisis</th></tr><tr><td>Systemic bias</td><td>Ketimpangan dan asumsi sosial dapat tertanam dalam kebijakan serta sistem data.</td></tr><tr><td>Discrimination</td><td>Kebangsaan digunakan sebagai indikator risiko yang tidak relevan untuk menentukan kelayakan tunjangan.</td></tr><tr><td>Transparency</td><td>Individu tidak memperoleh penjelasan memadai mengenai alasan penandaan risiko.</td></tr><tr><td>Human oversight</td><td>Peninjauan manual tidak efektif jika petugas tidak memahami alasan sistem memberi skor risiko tinggi.</td></tr><tr><td>Redress</td><td>Harus tersedia mekanisme keberatan, koreksi, dan pemulihan bagi pihak terdampak.</td></tr></table></div>
+<h3>3.3 Pelajaran dan mitigasi</h3>
+<ul><li>Uji relevansi dan dampak setiap variabel yang digunakan.</li><li>Hindari penggunaan atribut sensitif sebagai indikator risiko tanpa dasar yang sah dan dapat dipertanggungjawabkan.</li><li>Dokumentasikan logika, data, dan alasan penandaan.</li><li>Pastikan peninjauan manusia bermakna, bukan formalitas.</li><li>Sediakan jalur keberatan dan pemulihan yang efektif.</li></ul>
+<div class="source-list"><b>Sumber kasus utama:</b><ul><li><a href="https://www.amnesty.org/en/documents/eur35/4686/2021/en/" target="_blank" rel="noopener">Amnesty International (2021) – Xenophobic Machines</a></li><li><a href="https://www.amnesty.org/en/wp-content/uploads/2021/10/EUR3546862021ENGLISH.pdf" target="_blank" rel="noopener">Laporan lengkap Amnesty (PDF)</a></li><li><a href="https://autoriteitpersoonsgegevens.nl/en/current/tax-administration-fined-for-discriminatory-and-unlawful-data-processing" target="_blank" rel="noopener">Dutch Data Protection Authority – denda dan pemrosesan data diskriminatif</a></li></ul></div>
+<div class="quiz" data-quiz="netherlands">
+<h3>Latihan 3 · Skandal tunjangan anak Belanda</h3>
+<div class="q" data-type="multi" data-answer="a,b,d">
+<div class="q-title">1. Multiple choice — Pilih prinsip yang bermasalah dalam kasus ini.</div>
+<div class="options"><label class="opt"><input type="checkbox" value="a"> Fairness dan non-diskriminasi.</label><label class="opt"><input type="checkbox" value="b"> Transparansi keputusan.</label><label class="opt"><input type="checkbox" value="c"> Kecepatan pemrosesan semata.</label><label class="opt"><input type="checkbox" value="d"> Human oversight dan akuntabilitas.</label></div></div>
+<div class="q" data-type="fill" data-answer="kebangsaan">
+<div class="q-title">2. Lengkapi satu kata — Salah satu faktor risiko yang digunakan dalam sistem tersebut adalah ______ pemohon.</div>
+<input type="text" placeholder="Satu kata..."></div>
+<div class="q" data-type="essay" data-keywords="keberatan,penjelasan,manusia,pemulihan,transparansi">
+<div class="q-title">3. Esai singkat — Sebutkan dua hak atau mekanisme yang perlu tersedia bagi warga yang ditandai berisiko oleh sistem otomatis.</div>
+<textarea rows="3" placeholder="Tulis jawaban..."></textarea></div>
+<button class="btn check-btn">Periksa jawaban</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="gender">
+<div class="section-kicker">Subbab 4 · Representasi data dan ketimpangan akurasi</div>
+<div class="case-head">
+<div><span class="case-tag">KASUS NYATA 04 · GENDER SHADES</span><h2>Ketika sistem pengenalan wajah lebih sering salah mengenali kelompok tertentu</h2><p class="lead">Audit akademik terhadap tiga sistem klasifikasi gender komersial menunjukkan kesenjangan akurasi berdasarkan warna kulit dan gender.</p></div>
+<img src="https://newtriernews.org/wp-content/uploads/2023/03/AP23002642945589.jpg" alt="Joy Buolamwini dengan topeng putih dalam konteks riset bias AI" loading="lazy">
+</div>
+<div class="photo-credit">Foto Joy Buolamwini oleh AP, diterbitkan New Trier News. <a href="https://newtriernews.org/features/2023/03/21/facial-recognition-a-white-mans-world/" target="_blank" rel="noopener">Sumber foto dan artikel</a>.</div>
+<div class="case-facts"><div class="fact"><b>Peneliti</b><span>Buolamwini & Gebru</span></div><div class="fact"><b>Tahun</b><span>2018</span></div><div class="fact"><b>Publikasi</b><span>FAccT / PMLR</span></div></div>
+<h3>4.1 Kronologi dan temuan penelitian</h3>
+<p>Penelitian Gender Shades mengevaluasi tiga sistem komersial klasifikasi gender berdasarkan citra wajah. Peneliti menunjukkan bahwa dua dataset pembanding yang digunakan saat itu didominasi subjek berkulit lebih terang. Mereka kemudian menguji sistem menggunakan dataset yang diseimbangkan menurut gender dan kategori warna kulit.</p>
+<p>Kesalahan klasifikasi tertinggi ditemukan pada perempuan berkulit lebih gelap, mencapai 34,7%. Kesalahan maksimum pada laki-laki berkulit lebih terang adalah 0,8%. Angka tersebut adalah tingkat kesalahan maksimum pada kelompok terkait dalam sistem yang diuji, bukan klaim bahwa semua teknologi pengenalan wajah memiliki tingkat kesalahan yang sama.</p>
+<div class="callout"><b>Makna temuan:</b> performa agregat dapat menyembunyikan kegagalan pada subkelompok tertentu. Karena itu, evaluasi perlu dilaporkan per kelompok yang relevan, bukan hanya satu angka akurasi keseluruhan.</div>
+<h3>4.2 Sumber bias dan mitigasi</h3>
+<div class="grid2"><div class="mini"><h4>Representation bias</h4>Dataset tidak cukup mewakili keragaman kelompok pengguna.</div><div class="mini"><h4>Evaluation bias</h4>Pengujian tidak cukup mencerminkan seluruh kelompok yang akan menggunakan sistem.</div><div class="mini"><h4>Mitigasi data</h4>Bangun dataset yang lebih beragam dan representatif dengan tata kelola yang sesuai.</div><div class="mini"><h4>Mitigasi evaluasi</h4>Laporkan metrik performa dan kesalahan untuk setiap subkelompok relevan.</div></div>
+<div class="source-list"><b>Sumber akademik primer:</b><ul><li><a href="https://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank" rel="noopener">Buolamwini & Gebru (2018) – Artikel PMLR</a></li><li><a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf" target="_blank" rel="noopener">Unduh artikel PDF gratis</a></li><li><a href="https://www.media.mit.edu/projects/gender-shades/publications/" target="_blank" rel="noopener">MIT Media Lab – Publikasi Gender Shades</a></li></ul></div>
+<div class="quiz" data-quiz="gender">
+<h3>Latihan 4 · Gender Shades</h3>
+<div class="q" data-type="single" data-answer="b">
+<div class="q-title">1. Single choice — Temuan utama Gender Shades adalah...</div>
+<div class="options"><label class="opt"><input type="radio" name="g1" value="a"> Semua kelompok memiliki tingkat kesalahan yang identik.</label><label class="opt"><input type="radio" name="g1" value="b"> Sistem yang diuji memiliki kesenjangan tingkat kesalahan antarkelompok.</label><label class="opt"><input type="radio" name="g1" value="c"> Penelitian membuktikan bahwa semua kamera tidak akurat.</label><label class="opt"><input type="radio" name="g1" value="d"> Warna kulit tidak berkaitan dengan evaluasi sistem dalam studi tersebut.</label></div></div>
+<div class="q" data-type="tf" data-answer="false">
+<div class="q-title">2. True / False — Angka kesalahan maksimum 34,7% berarti seluruh sistem pengenalan wajah di dunia selalu salah sebesar 34,7% untuk semua perempuan berkulit gelap.</div>
+<div class="options"><label class="opt"><input type="radio" name="g2" value="true"> True</label><label class="opt"><input type="radio" name="g2" value="false"> False</label></div></div>
+<div class="q" data-type="fill" data-answer="representasi">
+<div class="q-title">3. Lengkapi satu kata — Dataset yang tidak cukup mewakili kelompok pengguna mengalami masalah bias ______.</div>
+<input type="text" placeholder="Satu kata..."></div>
+<button class="btn check-btn">Periksa jawaban</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="mitigasi">
+<div class="section-kicker">Subbab 5 · Merancang mitigasi risiko</div>
+<h2>Dari temuan kasus menuju kontrol yang dapat diuji</h2>
+<p class="lead">Identifikasi risiko harus diikuti rencana mitigasi yang memiliki penanggung jawab, bukti pelaksanaan, dan indikator pemantauan.</p>
+<h3>5.1 Tiga titik intervensi mitigasi bias</h3>
+<div class="grid2"><div class="mini"><h4>Pre-processing</h4>Memeriksa kualitas, relevansi, dan keterwakilan data sebelum model dilatih.</div><div class="mini"><h4>In-processing</h4>Mengintegrasikan pertimbangan fairness ke dalam proses pelatihan dan pemilihan model.</div><div class="mini"><h4>Post-processing</h4>Mengevaluasi keluaran model dan menerapkan penyesuaian yang dapat dipertanggungjawabkan.</div><div class="mini"><h4>Kontrol privasi</h4>Data minimization, pembatasan akses, keamanan, retensi, dan penghapusan data.</div></div>
+<h3>5.2 Alur asesmen risiko AI</h3>
+<div class="table-wrap"><table><tr><th>Fungsi NIST AI RMF</th><th>Pertanyaan panduan</th><th>Contoh bukti</th></tr><tr><td>GOVERN</td><td>Siapa yang bertanggung jawab dan kebijakan apa yang berlaku?</td><td>Peran, kebijakan, dokumentasi tata kelola.</td></tr><tr><td>MAP</td><td>Apa tujuan sistem, konteks, data, stakeholder, dan potensi dampaknya?</td><td>Data-flow map, daftar stakeholder, konteks penggunaan.</td></tr><tr><td>MEASURE</td><td>Bagaimana risiko dan performa diukur?</td><td>Hasil audit privasi, metrik fairness, pengujian.</td></tr><tr><td>MANAGE</td><td>Kontrol apa yang dipilih, siapa pemiliknya, dan bagaimana dipantau?</td><td>Rencana mitigasi, log, indikator, prosedur eskalasi.</td></tr></table></div>
+<h3>5.3 Contoh matriks risiko sederhana</h3>
+<p>Untuk latihan kelas, gunakan rumus <b>Skor Risiko = Likelihood × Impact</b>. Skala 1–5 dapat dipakai sebagai alat bantu pembelajaran, bukan ambang resmi NIST.</p>
+<div class="table-wrap"><table><tr><th>Risiko</th><th>L</th><th>I</th><th>Skor</th><th>Usulan kontrol</th></tr><tr><td>Data pribadi dikumpulkan berlebihan</td><td>4</td><td>4</td><td>16</td><td>Minimisasi data dan tinjau tujuan.</td></tr><tr><td>Dataset tidak representatif</td><td>4</td><td>4</td><td>16</td><td>Audit representasi dan validasi.</td></tr><tr><td>Keputusan otomatis sulit digugat</td><td>3</td><td>5</td><td>15</td><td>Penjelasan, human review, dan mekanisme keberatan.</td></tr></table></div>
+<div class="callout warning"><b>Catatan:</b> skor risiko tidak boleh menggantikan penilaian profesional. Risiko hak asasi yang berat dapat memerlukan tindakan meskipun skor numeriknya tidak tinggi.</div>
+<div class="quiz" data-quiz="mitigation">
+<h3>Latihan 5 · Penerapan mitigasi</h3>
+<div class="q" data-type="order" data-answer="4,2,1,3">
+<div class="q-title">1. Mengurutkan — Susun tahapan NIST AI RMF sesuai urutan pengenalan dalam materi.</div>
+<div class="order-row"><span>Manage</span><select aria-label="Urutan Manage"><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="order-row"><span>Map</span><select aria-label="Urutan Map"><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="order-row"><span>Govern</span><select aria-label="Urutan Govern"><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="order-row"><span>Measure</span><select aria-label="Urutan Measure"><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="note">Urutan yang benar: Govern → Map → Measure → Manage.</div></div>
+<div class="q" data-type="match" data-answer="a,b,c">
+<div class="q-title">2. Mencocokkan — Pasangkan pendekatan dengan tahapnya.</div>
+<div class="match-row"><span>Memeriksa representasi dataset sebelum pelatihan</span><select><option value="">Pilih tahap</option><option value="a">Pre-processing</option><option value="b">In-processing</option><option value="c">Post-processing</option></select></div>
+<div class="match-row"><span>Menambahkan batasan fairness dalam pelatihan model</span><select><option value="">Pilih tahap</option><option value="a">Pre-processing</option><option value="b">In-processing</option><option value="c">Post-processing</option></select></div>
+<div class="match-row"><span>Mengevaluasi dan menyesuaikan keluaran model</span><select><option value="">Pilih tahap</option><option value="a">Pre-processing</option><option value="b">In-processing</option><option value="c">Post-processing</option></select></div>
+</div>
+<div class="q" data-type="essay" data-keywords="penanggung jawab,indikator,monitoring,bukti,kontrol">
+<div class="q-title">3. Esai singkat — Mengapa rencana mitigasi perlu mencantumkan penanggung jawab, indikator, dan bukti pemantauan?</div>
+<textarea rows="3" placeholder="Tulis jawaban..."></textarea></div>
+<button class="btn check-btn">Periksa jawaban</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="evaluasi">
+<div class="section-kicker">Evaluasi komprehensif</div>
+<h2>Uji pemahaman akhir</h2>
+<p class="lead">Gabungkan pengetahuan dari seluruh kasus untuk melihat apakah Anda mampu membedakan masalah privasi, bias, fairness, dan strategi mitigasi.</p>
+<div class="quiz" data-quiz="final">
+<div class="q" data-type="single" data-answer="c">
+<div class="q-title">1. Single choice — Kasus Clearview AI terutama berkaitan dengan...</div>
+<div class="options"><label class="opt"><input type="radio" name="f1" value="a"> Bias pengukuran biaya kesehatan.</label><label class="opt"><input type="radio" name="f1" value="b"> Dataset wajah tidak seimbang.</label><label class="opt"><input type="radio" name="f1" value="c"> Pengumpulan dan pemrosesan data biometrik.</label><label class="opt"><input type="radio" name="f1" value="d"> Klasifikasi tunjangan pendidikan.</label></div></div>
+<div class="q" data-type="multi" data-answer="a,c,d">
+<div class="q-title">2. Multiple choice — Pilih tindakan yang termasuk mitigasi privasi.</div>
+<div class="options"><label class="opt"><input type="checkbox" value="a"> Data minimization.</label><label class="opt"><input type="checkbox" value="b"> Mengumpulkan seluruh data yang mungkin tersedia.</label><label class="opt"><input type="checkbox" value="c"> Access control.</label><label class="opt"><input type="checkbox" value="d"> Kebijakan retensi dan penghapusan data.</label></div></div>
+<div class="q" data-type="tf" data-answer="false">
+<div class="q-title">3. True / False — Jika akurasi keseluruhan model tinggi, pengujian per kelompok tidak lagi diperlukan.</div>
+<div class="options"><label class="opt"><input type="radio" name="f3" value="true"> True</label><label class="opt"><input type="radio" name="f3" value="false"> False</label></div></div>
+<div class="q" data-type="fill" data-answer="fairness">
+<div class="q-title">4. Lengkapi satu kata — Prinsip keadilan dalam perlakuan dan hasil keputusan AI disebut ______.</div>
+<input type="text" placeholder="Satu kata..."></div>
+<div class="q" data-type="order" data-answer="3,1,4,2">
+<div class="q-title">5. Mengurutkan — Susun alur asesmen risiko sesuai NIST AI RMF.</div>
+<div class="order-row"><span>Measure</span><select><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="order-row"><span>Govern</span><select><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="order-row"><span>Manage</span><select><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+<div class="order-row"><span>Map</span><select><option value="">Pilih</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+</div>
+<div class="q" data-type="match" data-answer="a,b,c">
+<div class="q-title">6. Mencocokkan — Cocokkan kasus dengan konsep dominan.</div>
+<div class="match-row"><span>Clearview AI</span><select><option value="">Pilih konsep</option><option value="a">Privasi biometrik</option><option value="b">Proxy / measurement bias</option><option value="c">Representation bias</option></select></div>
+<div class="match-row"><span>Algoritma kesehatan Obermeyer</span><select><option value="">Pilih konsep</option><option value="a">Privasi biometrik</option><option value="b">Proxy / measurement bias</option><option value="c">Representation bias</option></select></div>
+<div class="match-row"><span>Gender Shades</span><select><option value="">Pilih konsep</option><option value="a">Privasi biometrik</option><option value="b">Proxy / measurement bias</option><option value="c">Representation bias</option></select></div>
+</div>
+<div class="q" data-type="essay" data-keywords="data,kelompok,risiko,mitigasi,monitoring">
+<div class="q-title">7. Esai singkat — Pilih satu kasus. Jelaskan satu sumber risiko, kelompok terdampak, dan dua mitigasi yang dapat dievaluasi.</div>
+<textarea rows="4" placeholder="Tulis jawaban ringkas dan gunakan bukti dari kasus..."></textarea></div>
+<button class="btn check-btn">Nilai latihan akhir</button><div class="feedback"></div>
+</div>
+</section>
+
+<section class="card reveal" id="referensi">
+<div class="section-kicker">Bacaan dan sumber tepercaya</div>
+<h2>Referensi kasus dan landasan akademik</h2>
+<p>Gunakan tautan berikut untuk membaca sumber primer atau dokumen resmi. Tautan eksternal dibuka pada tab baru. Foto-foto pada materi ini berasal dari media atau halaman institusi yang ditautkan; foto dipakai sebagai ilustrasi konteks dan bukan selalu merupakan dokumentasi teknis sistem AI.</p>
+<h3>Dokumen kasus</h3>
+<ol class="source-list">
+<li><b>Clearview AI – regulator Australia.</b> <a href="https://www.oaic.gov.au/news/media-centre/clearview-ai-breached-australians-privacy" target="_blank" rel="noopener">OAIC, 3 November 2021: temuan pelanggaran privasi</a>; <a href="https://www.oaic.gov.au/__data/assets/pdf_file/0016/11284/Commissioner-initiated-investigation-into-Clearview-AI%2C-Inc.-Privacy-2021-AICmr-54-14-October-2021.pdf" target="_blank" rel="noopener">keputusan lengkap PDF</a>.</li>
+<li><b>Algoritma kesehatan.</b> Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). <i>Dissecting racial bias in an algorithm used to manage the health of populations.</i> Science, 366(6464), 447–453. <a href="https://doi.org/10.1126/science.aax2342" target="_blank" rel="noopener">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/31649194/" target="_blank" rel="noopener">PubMed / abstrak gratis</a>.</li>
+<li><b>Skandal tunjangan anak Belanda.</b> Amnesty International (2021). <i>Xenophobic Machines: Discrimination through unregulated use of algorithms in the Dutch childcare benefits scandal.</i> <a href="https://www.amnesty.org/en/documents/eur35/4686/2021/en/" target="_blank" rel="noopener">Halaman laporan</a> · <a href="https://www.amnesty.org/en/wp-content/uploads/2021/10/EUR3546862021ENGLISH.pdf" target="_blank" rel="noopener">PDF lengkap</a>. Lihat juga <a href="https://autoriteitpersoonsgegevens.nl/en/current/tax-administration-fined-for-discriminatory-and-unlawful-data-processing" target="_blank" rel="noopener">Dutch Data Protection Authority (2021)</a>.</li>
+<li><b>Gender Shades.</b> Buolamwini, J., & Gebru, T. (2018). <i>Gender Shades: Intersectional accuracy disparities in commercial gender classification.</i> Proceedings of Machine Learning Research, 81, 77–91. <a href="https://proceedings.mlr.press/v81/buolamwini18a.html" target="_blank" rel="noopener">Artikel</a> · <a href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf" target="_blank" rel="noopener">PDF gratis</a> · <a href="https://www.media.mit.edu/projects/gender-shades/publications/" target="_blank" rel="noopener">MIT Media Lab</a>.</li>
+</ol>
+<h3>Landasan materi dan regulasi</h3>
+<ol class="source-list">
+<li>Tabassi, E. (2023). <i>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</i> (NIST AI 100-1). <a href="https://doi.org/10.6028/NIST.AI.100-1" target="_blank" rel="noopener">DOI dan publikasi NIST</a> · <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf" target="_blank" rel="noopener">PDF</a>.</li>
+<li>Mehrabi, N., et al. (2021). A survey on bias and fairness in machine learning. <i>ACM Computing Surveys, 54</i>(6). <a href="https://doi.org/10.1145/3457607" target="_blank" rel="noopener">DOI</a>.</li>
+<li>Pessach, D., & Shmueli, E. (2022). A review on fairness in machine learning. <i>ACM Computing Surveys, 55</i>(3). <a href="https://doi.org/10.1145/3494672" target="_blank" rel="noopener">DOI</a>.</li>
+<li>Republik Indonesia. (2022). <i>Undang-Undang Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi.</i> <a href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" target="_blank" rel="noopener">Dokumen resmi BPK</a>.</li>
+</ol>
+<div class="end-banner"><h3>Pesan kunci</h3><p>AI yang bertanggung jawab bukan hanya AI yang bekerja dengan akurat. Sistem juga perlu melindungi privasi, mengendalikan bias yang merugikan, dapat dijelaskan, diawasi, dan menyediakan mekanisme koreksi bagi pihak terdampak.</p><b>Luaran pertemuan:</b> Privacy and Bias Impact Brief (Tugas 2 – individu).</div>
+</section>
+</main>
+</div>
+<footer class="foot">
+<b>Etika Teknologi Informasi dan Tanggung Jawab AI · Pertemuan 7</b><br>
+Bahan ajar pengayaan berdasarkan RPS. Materi kasus diringkas dari sumber primer yang ditautkan. Foto eksternal dimuat dari URL sumber masing-masing; koneksi internet diperlukan untuk menampilkan foto, font, dan animasi GSAP.<br>
+Catatan: kuis esai memberikan pemeriksaan kata kunci sederhana sebagai umpan balik belajar, bukan penilaian akademik final. Periksa jawaban esai dengan rubrik dosen.
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(function(){
+  const norm=s=>(s||"").toString().trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[.,!?;:]/g,"");
+  function getQuestionAnswer(q){
+    const type=q.dataset.type;
+    if(type==="single"||type==="tf"){
+      const el=q.querySelector("input:checked"); return el?el.value:null;
+    }
+    if(type==="multi"){
+      return [...q.querySelectorAll("input:checked")].map(x=>x.value).sort().join(",");
+    }
+    if(type==="fill"){const el=q.querySelector('input[type="text"]');return el?norm(el.value):"";}
+    if(type==="essay"){const el=q.querySelector("textarea");return el?norm(el.value):"";}
+    if(type==="order"||type==="match") return [...q.querySelectorAll("select")].map(x=>x.value).join(",");
+    return "";
+  }
+  function checkQuiz(box){
+    let correct=0,answered=0,essayCount=0,essayFeedback=[];
+    const qs=[...box.querySelectorAll(".q")];
+    qs.forEach(q=>{
+      const type=q.dataset.type,ans=getQuestionAnswer(q),expected=q.dataset.answer||"";
+      let ok=false,attempted=ans!==null&&ans!=="";
+      if(type==="essay"){
+        essayCount++;
+        const words=(q.dataset.keywords||"").split(",").map(norm);
+        const hits=words.filter(w=>ans.includes(w));
+        const min=Math.min(2,words.length);
+        ok=ans.length>25&&hits.length>=min;
+        essayFeedback.push(ok?"Esai: respons memuat beberapa konsep kunci; tetap periksa ketepatan argumen secara manual.":"Esai: kembangkan jawaban dengan alasan dan istilah materi yang relevan.");
+        attempted=ans.length>0;
+      }else if(type==="fill"){ok=ans===norm(expected);}
+      else {ok=ans===expected;}
+      if(attempted)answered++;
+      if(ok)correct++;
+      q.style.borderLeft=attempted?(ok?"3px solid #16845d":"3px solid #c74747"):"3px solid #d3a044";
+      q.style.paddingLeft="12px";
+    });
+    const score=correct, total=qs.length;
+    const fb=box.querySelector(".feedback");
+    fb.className="feedback show "+(score===total?"good":"bad");
+    fb.innerHTML='<div class="score">'+score+' / '+total+' poin latihan</div><div>Terjawab: '+answered+' dari '+total+'. '+(score===total?"Bagus! Semua jawaban objektif dan pemeriksaan awal esai sesuai kunci/kata kunci.":"Baca pembahasan kembali, lalu perbaiki jawaban yang belum tepat.")+'</div>'+(essayFeedback.length?'<p>'+essayFeedback.join("<br>")+'</p>':"");
+  }
+  document.querySelectorAll(".check-btn").forEach(btn=>btn.addEventListener("click",()=>checkQuiz(btn.closest(".quiz"))));
+  const sections=[...document.querySelectorAll("main section[id]")];
+  const nav=[...document.querySelectorAll(".navlink")];
+  function updateProgress(){
+    const max=document.documentElement.scrollHeight-innerHeight;
+    const pct=max>0?Math.round(scrollY/max*100):0;
+    document.getElementById("progressBar").style.width=pct+"%";
+    document.getElementById("progressLabel").textContent=pct+"% dipelajari";
+    let current="";
+    sections.forEach(s=>{if(scrollY>=s.offsetTop-160)current=s.id;});
+    nav.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
+  }
+  addEventListener("scroll",updateProgress,{passive:true});updateProgress();
+  if(window.gsap){
+    gsap.utils.toArray(".reveal").forEach(el=>{
+      gsap.fromTo(el,{y:22,opacity:0},{y:0,opacity:1,duration:.7,ease:"power2.out",scrollTrigger:undefined,
+        onComplete:()=>el.classList.remove("reveal"),
+        delay:.05});
+    });
+    gsap.from(".hero h1",{y:24,opacity:0,duration:.8,ease:"power3.out"});
+    gsap.from(".hero p",{y:16,opacity:0,duration:.8,delay:.15,ease:"power2.out"});
+    gsap.from(".hero-meta .pill",{y:12,opacity:0,stagger:.08,duration:.45,delay:.3});
+  }else{
+    document.querySelectorAll(".reveal").forEach(el=>{el.style.opacity=1;el.style.transform="none";});
+  }
+})();
+</script>
+</body>
+</html>
